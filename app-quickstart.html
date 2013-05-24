@@ -6,12 +6,12 @@
 <!-- do not populate or add meta data or title, the SEO layer will add it -->
 
 <!-- used for optional social media extensions -->
-<meta property="og:type" content="" id='ogType' />
-<meta property="og:image" content="" id='ogImage' />
-<meta property="og:description" content="" id='ogDescription' />
+<meta property="og:type" content="" id='ogType' >
+<meta property="og:image" content="" id='ogImage' >
+<meta property="og:description" content="" id='ogDescription' >
 
 
-<base href='' /><!-- leave blank so it works for a local file -->
+<base href='' /><!-- leave blank so it works for a local file. updated to / if protocol is not file: -->
 
 
 
@@ -22,9 +22,9 @@ var myCreole;
 var app = {vars:{
 	"release":"201318.a",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
-	"checkoutAuthMode" : "active", //can be passive, active or required
-	"baseURL":"",
-	"testURL":"http://www.getprinting3d.com/" //put your domain here. you can then test locally in firefox.
+	"baseURL":"", //used in non-local mode.
+	"checkoutAuthMode" : "required",//can be passive, active or required
+	"testURL":"http://www.ylh.zoovy.com/" //used ONLY if protocol is file: (for testing)
 	},u:{},rq:[]};
 
 //set base url so images, css, js, etc all load from appropriate location once deployed.
@@ -36,7 +36,6 @@ else	{
 	app.vars.baseURL = document.location.protocol+"//"+document.domain+"/";
 	}
 document.getElementsByTagName('base')[0].href = app.vars.baseURL;
-
 </script>
 
 
@@ -45,171 +44,82 @@ all css includes need to be after the js that changes the base url.
 css files should be included before any .js file to ensure they are downloaded in parallel
 -->
 <link rel="stylesheet" type="text/css" href="app-quickstart.css" />
-<link rel="stylesheet" type="text/css" href="app-fashion.css" />
-<link rel="stylesheet" type="text/css" href="app-fashion/jquery-ui-1.10.2.custom.css" />
+<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/ui-lightness/jquery-ui.css" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="resources/jquery.ui.widget.min.js"></script>
+<script src="resources/jquery.ui.widget.min.js"></script><!-- here so that plugins that may load before the jqueryui lib load without error -->
 <script type="text/javascript" src="loadscript.js"></script>
 
 
+
+
 <script type="text/javascript">
-app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
+app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 </script>
 
 
 </head>
 
-<body>	
+<body>
+<!-- DELETE THIS WHEN YOU GET STARTED -->
+<h1>WELCOME TO QUICKSTART</h1>
+This file is intended to go along with the 10-step tutorial at:
+<a href="https://github.com/zoovy/AnyCommerce-Development/wiki/quickstart">https://github.com/zoovy/AnyCommerce-Development/wiki/quickstart</a>
+<!-- /DELETE THIS WHEN YOU GET STARTED -->
+
+
+
 
 <!-- what is displayed onLoad until the view is loaded -->
 <div id='appPreView'>
-	<div class='logo'><!-- PUT YOUR LOGO HERE --></div>
-	<div id="loader" class='alignCenter'>
-		<h3>Loading Your Shopping Experience</h3>
+<table>
+<tr>
+	<td><!-- put logo here --></td>
+	<td>
+
+	<div id="loader">
+		<h3>One moment please.</h3>
 
 		<div class='alignCenter'>
-		<progress id="appPreViewProgressBar" max="100" value="0"></progress><br />
+		<progress id="appPreViewProgressBar" max="100" value="0"></progress><br>
 		</div>
 		<div id='appPreViewProgressText'>0% Complete</div>
 	</div>
+	<div id="clickToLoad" class="displayNone pointer">
+		Click here to load your shopping experience!
+	</div>
 	<div class='appMessaging'></div>
+	</td>
+</tr>
+</table>
 </div>
-<div id='appPreViewBG' class="ui-widget-overlay ui-front"></div>
 
 
-<div id='appView'>
 
-<!-- HEADER -->
-    
-    <div id='header' class='clearfix'>
-    	<div class='topNav'>
+<div id='appView' class='displayNone'>
 
-            <div class='floatRight'>
-<a href='#!cart?show=cart' class='bindByAnchor'><span class="cartItemCount"></span> Items in your <b>shopping bag</b></a>  |            	
-<a href='#!company?show=contact' class='bindByAnchor'>Contact</a>  | 
-<a href='#!company?show=faq' class='bindByAnchor'>Help</a>
-            </div>
+<!-- VIEW CONTENT -->
+<!-- leave the appView div, put your your html here ...  -->
 
-			
-			<div class='floatLeft hideIfLoggedIn marginLeft' onClick="showContent('customer',{'show':'myaccount'});">Welcome guest. Click here to log in</div>
-			<div class='floatLeft hideIfLoggedOut marginLeft' onClick="showContent('customer',{'show':'myaccount'});">Welcome back <span class='username'></span>. Click here for account details</div>
-		    
-    	</div>
-        
-        <div class='logoSearchContainer clearfix'>
-        	<div id='logo' onClick="showContent('homepage');" class='pointer'></div>
-        	<div class='searchBarContainer'>
-				<form name='headerSearchFrm' action='#' class='productSearchForm' method="get" id="searchFunc">
-					<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault" placeholder="Find it here..." id="searchBar"/>
-					<input class="search pointer" type="submit" value="Search" id="searchButton" />
-   		    	</form>
-			</div>
-        </div>
-        
-
-        <div class='mainNavContainer'>
-		<ul class='topLinks'>
-			<li><a href='#' onClick='handleCategoryMenu(); return false;'>Browse</a></li>
-			<li><a href='#!search?TAG=IS_BESTSELLER' class='bindByAnchor'>What's Hot</a></li>
-			<li><a href='#!search?TAG=IS_NEWARRIVAL' class='bindByAnchor'>New Arrivals</a></li>
-			<li><a href='#!search?TAG=IS_SALE' class='bindByAnchor'>On Sale</a></li>
-			<li><a href='#!search?TAG=IS_CLEARANCE' class='bindByAnchor'>Clearance</a></li>
-		</ul>
-		<div id='browseMenuContent' class='displayNone'>
-			<ul id='tier1categories' class='columnify'></ul>
-		</div>
-        </div>
-    </div>
+	<!--
+	** REMINDER : DO NOT PUT ANY GRAPHICS/CONTENT THAT SHOULD NOT APPEAR ON EVERY PAGE IN THE VIEW (HERE)
+	**				  INSTEAD PUT THEM INTO <div id="homepageTemplate"></div>
+	-->
+	
+<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
 
 <!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
-	<div id='appNav'>
-		<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
-		<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
-	</div>
-    
-    <!-- WHERE THE MAGIC HAPPENS -->
-	<div id='globalMessaging' class='appMessaging'></div>
-    <div id='mainContentArea' class='marginBottom clearfix'></div>
-    
-	
-	<!-- FOOTER -->
-    <div class='footerNewsletter'>
-		<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
-			<div id='upToDate' class=' floatLeft marginLeft marginTop marginRight'>Join and Save!</div>
-			<div class='floatLeft marginRight marginTop '>
-			<input type='text'  maxlength='50' size='30' name='fullname' class='footerFormFrm' placeholder='Full Name' />
-			</div>
-			<div class='floatLeft marginRight marginTop '>
-			<input type='email'  maxlength='50' size='30' name='login' class='footerFormFrm' placeholder='E-mail Address' />
-			</div>
-			<div class='floatLeft marginRight marginTop '>
-			<input type='submit' value='Sign Up!' id='footerSignUpButton'>
-			</div>
-		</form>
-	</div>	
+<div id='appNav'>
+	<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
+	<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
+</div>
 
-    <div id='footerLinks' class='clearfix'>
-	    <div id='categories' class="bottomLinkListContainer">
-    		<ul class='bottomLinkList'>
-               	<li class='listHead'>SHOP</li>
-		        	<!-- place holder links, will need to replace safe.name later -->  
-				<li><a href='#top' class='footerLinkStyle' onClick="handleCategoryMenu('show');">Browse by category</a></li>
-				<li><a href='#!search?TAG=IS_BESTSELLER' class='footerLinkStyle bindByAnchor'>What's hot</a></li>
-				<li><a href='#!search?TAG=IS_NEWARRIVAL' class='footerLinkStyle bindByAnchor'>New arrivals</a></li>
-				<li><a href='#!search?TAG=IS_SALE' class='footerLinkStyle bindByAnchor'>Sale</a></li>
-				<li><a href='#!search?TAG=IS_CLEARANCE' class='footerLinkStyle bindByAnchor'>Clearance</a></li>
-			</ul>    
-		</div>
-        <div id='help' class="bottomLinkListContainer">
-        	<ul class='bottomLinkList'>
-            	<li class='listHead'>HELP</li>
-				<li><a href='#!company?show=about' class='footerLinkStyle bindByAnchor'>About</a></li>
-				<li><a href='#!company?show=contact' class='footerLinkStyle bindByAnchor'>Contact us</a></li>
-				<li><a href='#!company?show=faq' class='footerLinkStyle bindByAnchor'>FAQ</a></li>
-				<li><a href='#!company?show=shipping' class='footerLinkStyle bindByAnchor'>Shipping policy</a></li>
-				<li><a href='#!company?show=return' class='footerLinkStyle bindByAnchor'>Return policy</a></li>
-				<li><a href='#!company?show=payment' class='footerLinkStyle bindByAnchor'>Payment policy</a></li>
-				<li><a href='#!company?show=privacy' class='footerLinkStyle bindByAnchor'>Privacy policy</a></li>
-            </ul>
-		</div>
-        <div id='myaccount' class="bottomLinkListContainer">
-            <ul class='bottomLinkList'>
-                <li class='listHead'>MY ACCOUNT</li>
-                <li class='hideIfLoggedIn'><a href='#!customer?show=newsletter'  class='footerLinkStyle bindByAnchor'>Create account</a></li>
-                <li class='hideIfLoggedIn'><a href='#!customer?show=myaccount' class='footerLinkStyle bindByAnchor'>Sign In</a></li>
-                <li class='hideIfLoggedOut'><a href='#!customer?show=myaccount' class='footerLinkStyle bindByAnchor'>My account</a></li>
-                <li class='hideIfLoggedOut'><a href='#!customer?show=changepassword' class='footerLinkStyle bindByAnchor'>Change password</a></li>
-                <li><a href='#!customer?show=lists' class='footerLinkStyle bindByAnchor'>Wishlist</a></li>
-                <li><a href='#!customer?show=orders' class='footerLinkStyle bindByAnchor'>Order tracking</a></li>
-            </ul>
-        </div>
-<!--
-uncomment and set links
-        <div id='morefashion' class="bottomLinkListContainer">
-            <ul class='bottomLinkList'>
-                <li class='listHead'>MORE FASHION</li>
-				<li><a href='#' target='_blank' class='footerLinkStyle'>Blog</a></li>
-				<li><a href='#' class='footerLinkStyle'>Tutorials</a></li>
-				<li><a href='#' class='footerLinkStyle'>Tips and Tricks</a></li>
-				
-				<li><a  target='_blank' href='http://www.youtube.com/' class='footerLinkStyle'>You Tube</a></li>
-				<li><a  target='_blank' href='https://www.facebook.com/' class='footerLinkStyle'>Facebook</a></li>
-				<li><a  target='_blank' href='https://twitter.com/' class='footerLinkStyle'>Twitter</a></li>
-            </ul>
-        </div>
-		-->
-    </div>
-        
-    <div id='footerInformation' class='clearfix'>
-<div class='floatLeft'>Copyright &copy; 2012 All Rights Reserved.</div>
-<div class='floatRight'><a href='http://www.zoovy.com' target="_blank">eCommerce by Zoovy</a></div>
-    </div>
-
+<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 
 <!-- ... your html ends -->
 <!-- /VIEW CONTENT -->
 </div>
+
 
 
 
@@ -246,75 +156,33 @@ COMMONLY EDITED TEMPLATES
 
 
 
+<!--
+the homepageTemplate template is loaded into mainContentArea by default when the application loads
+-->
 <div id='homepageTemplate' class='homeTemplate'>
-	<div class='mainBannerContainer clearfix'>
-		
-		<div class='mainBannerGraphic pointer' onClick="showContent('search',{'TAG':'IS_NEWARRIVAL'});"><img src='app-fashion/new_arrivals-703x294.jpg' width='703' height='294' alt='' /></div>
-		
-		<div class='mainBannerNewsletter'>
-		
-			<div id='scoop'>GET THE SCOOP ON</div>
-			<div id='latest'>THE LATEST IN FASHION</div>
-				   
-			<div class='headerNewsletterSignUpContainer marginBottom'>              
-				<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
-					<fieldset class='borderNone noPadOrMargin'>
-						<div>
-							<input type='text'  maxlength='50' size='30' name='fullname' class='headerSubscribeFrm' placeholder='Full Name' />
-						</div>	
-		
-						<div id='headerNewsletterEmail'>
-							<input type='email'  maxlength='50' size='30' name='login' class='headerSubscribeFrm' placeholder='E-mail Address' />
-						</div>
-					</fieldset>
-					
-				
-				<input type='submit' class='socialIconContainer' value='SIGN UP!' id='headerSignUpButton'>
-				</form>
-			</div>
-			
-			<div class='socialIcons clearfix '>
-
-<div id='followUs'><img src='app-fashion/followus-190x11.png' width='190' height='11' alt='follow us...'></div>
-<div class='socialIconContainer'>
-	<div class='facebookIcon'><img src='app-fashion/facebook-32x32.png' width='32' height='32' alt='Facebook' ></div>
-	<div class='twitterIcon'><img src='app-fashion/twitter-32x32.png' width='32' height='32' alt='twitter' ></div>
-	<div class='youtubeIcon'><img src='app-fashion/youtube-32x32.png' width='32' height='32' alt='youtube' ></div>
-</div>
-			</div>
-			
-		</div>
-				
-	</div>
-        
-
-	<section id='newArrivals'>
-		
-		<div class='listHeader'>
-		<a href="#" onClick="return showContent('search',{'TAG':'IS_SALE'});" class='floatRight'>See all Sale Items</a>
-		<h2>Now On Sale</h2>
-		</div>
-		
-	<ul id='homeProdSearchSale' data-bind='var: elastic-native({"size":"4","mode":"elastic-native","filter":{"term":{"tags":"IS_SALE"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-
 	
 
-	</section>
-	
-	<section id='bestSellers'>
-		<div class='listHeader'>
-		<a href="#" onClick="return showContent('search',{'TAG':'IS_BESTSELLER'});" class='floatRight'>See all Best Sellers</a>
-		<h2>Best Sellers</h2>
-		</div>
 
-	<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"4","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+	
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
 
-	</section>
-	
-	
-	
+	<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; hide_summary:1; before:<h2>Featured Items</h2>; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+
+<!-- a sample of how to format an elastic native search in a data-bind -->
+	<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"4","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview; before:<h2>Best Sellers</h2>;' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+
+	<a href="#" onClick="return showContent('search',{'TAG':'IS_BESTSELLER'});">See all Best Sellers</a>
+
+<!-- a sample of how to get a 'list' src onto the page. -->
+	<ul data-bind="var: list($models.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+
 
 </div>
+
+
+
+
 
 
 
@@ -330,16 +198,19 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
 
+	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+
+	<h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
+
 	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
 
-	<h2 class='listHeader'>Featured Items</h2>
-	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 32; " class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+	<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
 
 	<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 
-	<div class='clearfix alignRight'><a href='#top'>back to top</a></div>
+
 </div>
 
 
@@ -350,15 +221,20 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 <!-- used to display a category within a 'list', usually in the body of a category or the homepage. -->
 <ul>
-<li id='categoryListTemplate' class='catListItem pointer' onClick="showContent('category',{'navcat':$(this).attr('data-catsafeid')});">
-	<div class='catContainer'>
-		<div class='catName' data-bind='var: category(pretty); format:catText; extension: myRIA;'></div>
-		<img src='blank.gif' class='catThumb' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='190' height='190' alt='' />
-	</div>	
+<li id='categoryListTemplate'>
+	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
+		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='120' height='120' /></div>
+		<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
+	</div>
 </li>
 
 
-<li id='categoryListTemplateRootCats' onClick="showContent('category',{'navcat':$(this).attr('data-catsafeid')});" data-bind='var: category(pretty); format:catText; extension: myRIA;'></li>
+<li id='categoryListTemplateRootCats'>
+	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
+		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='35' height='35' /></div>
+		<div class='catName'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
+	</div>
+</li>
 
 </ul>
 
@@ -370,30 +246,58 @@ Used for the product in a product list (prodlist), usually in the body of a cate
 the loadingBG class is removed (must be that classname) when the template is translated.
 remember to NOT put the button inside the 'onclick' container or two events will occur onclick.
 -->
-<li id='productListTemplate' class='loadingBG productListItem' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
+<li id='productListTemplate' class='loadingBG  ' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
 
 	<button class='floatRight pointer quickView displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
 
-	<div class='prodContainer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
+		<div class='prodThumbContainer' data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>
+		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
+		</div>
 
-<div class='imageAndTags'>
-	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-	<div class='prodThumbContainer pointer'>
-		<h4 class='prodName' data-bind='var: product(zoovy:prod_name); format:text;'></h4>
-		<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;bgcolor:ffffff;' width='190' height='190' alt='' />
-	</div>
-</div>
-<div class='priceDetail hideInMinimalMode'>
-	<div class='price'>
-		<div data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true;'></div>
+		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
+
+		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
+		
 		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
+<!-- 	<span data-bind='var: reviews(reviews.total); format:text; pretext: from ;posttext: reviews; className:numReviews;'></span> -->
 	</div>
-	<div class='detailButton pointer' >DETAILS</div>
-</div>
+	
+	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this),{'action':'modal'}); return false;">
+		<input type='hidden' name='qty' value='1' />
+		<button data-bind='format:addToCartButton; extension:myRIA; useParentData:true;'>more details</button>
+	</form>
+	
+</li>
+
+
+<!--
+for product lists with addToCart feature (accessories, for example)
+container ul should have lineItemProdlist class on it instead of productList
+-->
+<li id='productListTemplateATC' class='loadingBG  ' >
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+
+		<div class='prodThumbContainer floatLeft'>
+		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
+		</div>
+
+		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
+
+		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
+
+		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
+	
+		<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
+	
+			<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
+			<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:0;' class='borderNone'></fieldset>
+	
+			<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
+		</form>
 
 	</div>
 </li>
-
 
 
 <li id='productListTemplateBuyerList' class='loadingBG clearfix' >
@@ -401,14 +305,14 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 		<div class='prodThumbContainer floatLeft'>
 			<div class='ui-widget ui-widget-content ui-corner-all'>
-				<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='160' height='160' alt='' />
+				<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='160' height='160' />
 				<div class='buttonList ui-widget ui-widget-header ui-corner-all alignCenter'>
 
 <button class='ui-state-default ui-corner-all' title='add item to cart' onClick="showContent('product',{'pid':$(this).closest('[data-pid]').attr('data-pid')});">
 <span class="ui-icon ui-icon-cart"></span>
 </button>
 
-<button class='ui-state-default ui-corner-all' title='more information'>
+<button class='ui-state-default ui-corner-all' title='more information' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">
 <span class="ui-icon ui-icon-info"></span>
 </button>
 
@@ -440,89 +344,39 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 
 
-
-
-<!--
-for product lists with addToCart feature (accessories, for example)
-container ul should have lineItemProdlist class on it instead of productList
--->
-<table>
-
-<tr id='productListTemplateATC'>
-	<td>
-	<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' alt='' />
-	</td>
-
-	<td>
-	<hgroup class='marginBottom clearfix'>
-		<h3 data-bind='var: product(zoovy:prod_name); format:text;'></h3>
-		<h4 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h4>
-		
-		<h6 data-bind='var:product(pid); format:text; pretext: sku: ;'></h6>
-		<h6 data-bind='var:product(zoovy:prod_mfg); format:text; pretext: by: ;'></h6>
-	</hgroup>
-	<div data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></div>
-	</td>
-	<td>
-	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.cart_quickadd.a.addItemToCart($(this)); return false;">
-	<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:0;' class='borderNone'></fieldset>
-	<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
-	<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
-	</form>		
-	</td>
-</tr>
-</table>
-
-
-
-
-
 <ul>
 <!--
 Used for the product in a product list (prodlist), usually in the body of a category or the homepage.
 the loadingBG class is removed (must be that classname) when the template is translated.
 remember to NOT put the button inside the 'onclick' container or two events will occur onclick.
+
+SANITY -> if you change the height and width of this image, change the .minimalMode .searchResultsProduct in qs_styles.css to match
 -->
-<li id='productListTemplateResults' class='loadingBG productListItem searchResultsProduct' >
-	<div class=' prodContainer' onClick="app.ext.myRIA.a.handleProdPreview($(this).closest('li').attr('data-pid'));">
+<li id='productListTemplateResults' class='loadingBG searchResultsProduct ' >
+	<div onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));" class='pointer'>
+		<div class='prodThumbContainer'>
+		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='120' height='120' />
+		</div>
 
-<div class='imageAndTags'>
-	<div data-bind="var: product(tags); format:addTagSpans;" class='tagsContainer hideInMinimalMode'></div>
-	<div class='prodThumbContainer pointer'>
-		<h4 class='prodName' data-bind='var: product(prod_name); format:text;'></h4>
-		<img src='blank.gif' class='prodThumb' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='190' height='190' alt='' />
+		<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
+
+		<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
 	</div>
-</div>
-<div class='priceDetail hideInMinimalMode'>
-	<div class='price' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price;'></div>
-	<div class='detailButton pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>DETAILS</div>
-</div>
-
-
-	</div>
+	<div class='hideInMinimalMode pointer moreDetails' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">more details</div>
 </li>
 
+<li id='productListTemplateResultsNoPreview' class='loadingBG searchResultsProduct ' >
+	<div onClick="return showContent('product', {'pid' : $(this).parent().attr('data-pid')});" class='pointer'>
+		<div class='prodThumbContainer'>
+		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='120' height='120' />
+		</div>
 
-<li id='productListTemplateResultsNoPreview' class='loadingBG productListItem ' >
-	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer prodContainer'>
+		<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
 
-<div class='imageAndTags'>
-	<div class='prodThumbContainer pointer'>
-		<h4 class='prodName' data-bind='var: product(prod_name); format:text;'></h4>
-		<img src='blank.gif' class='prodThumb' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='190' height='190' alt='' />
+		<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
 	</div>
-</div>
-<div class='priceDetail'>
-	<div class='price' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price;'></div>
-	<div class='detailButton'>DETAILS</div>
-</div>
-
-
-	</div>
+	<div class='hideInMinimalMode pointer moreDetails' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">more details</div>
 </li>
-
-
-
 </ul>
 
 
@@ -544,15 +398,10 @@ the submit button does not need to be within the form (a button could be used el
  -> use the button to submit the form, not execute the call or utility separately. That way if additional
  actions are added to the submit, they only have to be managed in one place.
 
-note - this is draft 1. currently, the view in modal utility has the reviewsummary and reviews content ID's hard coded.
-reviewSummaryID='prodViewerReviewSummary'
-reviewsID='prodViewerReviews'
-
 Additionally, the cross selling features also have hard coded id's, though they're specified within this extension in the xsell callback.
 
 this will likely become more flexible in the future. ###
 -->
-
 
 
 <div id='productTemplate' class='productPage'>
@@ -561,25 +410,22 @@ this will likely become more flexible in the future. ###
 
 <table class='prodViewerContainer'>
 <tr>
-	<td class='imageContainer gallery'>
+	<td class='imageContainer'>
 
-<div>
+<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-	<div class='image1'>
-	<a href='blank.gif' data-bind='var: product(zoovy:prod_image1); format:imageURL2Href; h:; w:;' data-gallery="gallery"  ><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' /></a>
-	</div>
+	<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
 
 </div>
 
-	<div  class='prodThumbs'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
 
-<a href='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL2Href; h:; w:;' data-gallery="gallery"  ><img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image2); format:imageURL;' width='75' height='75' /></a>
+<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='100' height='100' /></div>
 
-<a href='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL2Href; h:; w:;' data-gallery="gallery"  ><img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image3); format:imageURL;' width='75' height='75' /></a>
+<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='100' height='100' /></div>
 
-<a href='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL2Href; h:; w:;' data-gallery="gallery"  ><img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image4); format:imageURL;' width='75' height='75' /></a>
-
+<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='100' height='100' /></div>
 
 	</div>
 
@@ -594,7 +440,16 @@ this will likely become more flexible in the future. ###
 		<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
 	</hgroup>
 
-	<h3 class='basePrice marginBottom' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h3>
+	<div class='priceContainer marginBottom'>
+		<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
+		<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
+		<span class='savings'>
+			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
+			<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
+		</span>
+	</div>
+	<div class="socialLinks"></div>
+
 
 	<table class='marginBottom fullWidth gridTable' data-app-role='childrenSiblingsContainer'>
 		<tbody data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></tbody>
@@ -602,9 +457,9 @@ this will likely become more flexible in the future. ###
 
 
 	<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
+	<div data-app-role='timeInTransit' class='displayNone'></div>
 
-
-	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.cart_quickadd.a.addItemToCart($(this)); return false;">
+	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
 
 		<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
 		<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone'></fieldset>
@@ -676,12 +531,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 	</div>
 
 	<div class='tabContent' data-anytab-content='prodAccessories'>
-
-
-<table class='fullWidth gridTable'>
-<tbody data-bind="var: product(zoovy:accessory_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplateATC;hide_pagination:true;hide_summary:true; withReviews:1; withInventory:1; withVariations:1;"></tbody>
-</table>
-
+<ul class='listStyleNone fluidList clearfix noPadOrMargin lineItemProdlist' data-bind="var: product(zoovy:accessory_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplateATC;hide_pagination:true;hide_summary:true; withReviews:1; withInventory:1; withVariations:1;"></ul>
 	</div>
 
 
@@ -702,13 +552,20 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 
-
 <!-- a template used for a quickview link off of a category page -->
 <div id='productTemplateQuickView'>
 
 <table class='prodViewerContainer'>
 <tr>
+	<td class='imageContainer'>
+<div>
 
+	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
+	<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='240' height='240' /></div>
+
+</div>
+
+	</td>
 
 	<td class='prodSummaryContainer marginBottom no_underline'>
 	<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
@@ -726,37 +583,19 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 	<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency'></div>
 
-	<section id='prodViewerReviewSummary' class='marginBottom'>
+	<section class='marginBottom'>
 		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
 		<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span>
 	</section>
 
-	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.cart_quickadd.a.addItemToCart($(this)); return false;">
-
-		<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
-		<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone'></fieldset>
-
-		<input type='submit' value='Add to Cart' class='addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
-	</form>
-
 	<div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
 
 	</td>
-	
-	<td class='imageContainer'>
-<div>
-
-	<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='240' height='240' alt='' /></div>
-
-</div>
-
-	</td>
-	
 </tr>
 <tr>
 	<td colspan='2'>
 
-	<ul class='listStyleNone clearfix productReviewsList' id='prodViewerReviews' data-bind="var: reviews(reviews.@reviews); format:processList; loadsTemplate:productReviewsTemplateDetail;"></ul>
+	<ul class='listStyleNone clearfix productReviewsList'  data-bind="var: reviews(reviews.@reviews); format:processList; loadsTemplate:productReviewsTemplateDetail;"></ul>
 
 	</td>
 </tr>
@@ -997,8 +836,8 @@ subscribeListsArticle is used for authenticated buyers
 	</div>
 	<div class='billAddresses' data-bind="var: buyer(@bill); format:processList; loadsTemplate:billAddressTemplate;"></div>
 </div>
-<br>
-<div class='shipAddressContainer clearfix' data-app-role='addressContainer' data-app-addresstype='ship'>
+
+<div class='shipAddressContainer' data-app-role='addressContainer' data-app-addresstype='ship'>
 	<div class='marginBottom'>
 		<button class='floatRight' data-app-event='myRIA|showBuyerAddressAdd'>Add New Shipping Address</button>
 		<h2>Shipping Address(es)</h2>
@@ -1064,7 +903,6 @@ subscribeListsArticle is used for authenticated buyers
 
 
 
-
 <div id='searchTemplate' class='searchResultsPage clearfix'>
 
 	<!-- the div is use to show a detailed view of a product. should be hidden by default. -->
@@ -1076,7 +914,6 @@ subscribeListsArticle is used for authenticated buyers
 	</div>
 
 </div>
-
 
 
 
@@ -1507,7 +1344,7 @@ The 'data-action' attribute is used to assign an onclick.
 
 
 
-<table class='orderContentsTable fullWidth' data-app-role='invoiceContainer' id='invoiceTemplate'>
+<table class='orderContentsTable' data-app-role='invoiceContainer' id='invoiceTemplate'>
 <tr>
 	<td colspan='2'>
 <div class='floatRight'>
@@ -1522,7 +1359,11 @@ The 'data-action' attribute is used to assign an onclick.
 <tr>
 	<td>
 <hgroup class='marginBottom'>
-<h3 class='orderID' data-bind='var:order(order/our/orderid);format:text;'></h3>
+<!-- print icon -->
+
+
+<!-- <h2 data-bind='var:order(bill/firstname);format:text; pretext:Shipping Status: ;'></h2> -->
+
 <h5 class='orderTotal' data-bind='var:order(order/sum/order_total);format:money; currencySign: $;  hideZero:false; pretext:Order Total: ;'></h5>
 <h5 class='balanceDue' data-bind='var:order(order/sum/balance_due_total);format:money; currencySign: $;  hideZero:false; pretext:Balance Due: ;'></h5>
 </hgroup>
@@ -1561,7 +1402,7 @@ The 'data-action' attribute is used to assign an onclick.
 	</td>
 	<td class='orderContentsProdlistContainer'>
 	<ul data-bind='var:order(order/tracking); format:orderTrackingLinks; extension:store_crm;before:<h4>Shipping:</h4>;' class='displayNone noListStyle marginBottom'></ul>
-	<table  class='listStyleNone lineItemProdlist fullWidth'>
+	<table  class='listStyleNone lineItemProdlist'>
 		<tbody data-bind="var: order(order/@ITEMS); format:stuffList; loadsTemplate:chkoutInvoiceItemTemplate;"></tbody>
 	</table>
 	</td>
@@ -1652,7 +1493,6 @@ The 'data-action' attribute is used to assign an onclick.
 
 
 
-
 <div class='debug displayNone'>
 <table>
 <tr>
@@ -1678,47 +1518,16 @@ The 'data-action' attribute is used to assign an onclick.
 	</li>
 </ul>
 	</td>
-	
-	
 	<td>
-	<input type='text' onBlur="app.model.destroy($(this).val()); $(this).val('');" placeholder='destroy' />
+<form name='headerSearchFrm' action='#' class='productSearchForm marginLeft' method="get">
+	<input type='search' name='KEYWORDS' placeholder='product search' class="productSearchKeyword handleDefault" />
+	<button>Search</button>
+</form>
 	</td>
 </tr>
 </table>
 
 </div>
-
-
-
-<script type='text/javascript'>
-
-
-function handleCategoryMenu(state)	{
-//	app.u.dump("BEGIN handleCategoryMenu. state: "+state);
-	var $cmc = $('#browseMenuContent'); //category menu content
-	
-	if(state == 'show' && $cmc.is(':visible'))	{} //do nothing.
-	else if(state == 'hide' && !$cmc.is(':visible'))	{} //do nothing.
-	else if($cmc.is(':animated'))	{} //hhhmmm... what to do here.
-	else if($cmc.is(':visible'))	{
-		$cmc.slideUp('slow');
-		}
-	else	{
-		$cmc.slideDown('fast');
-//once you enter the menu, add an event that registers leaving the menu to close it.
-// off them first so that the event isn't added multiple times (each time the menu is opened and mouse-overed)
-		$cmc.off('mouseenter.handleCategoryMenu').on('mouseenter.handleCategoryMenu',function(){
-			$cmc.off('mouseleave.handleCategoryMenu').on('mouseleave.handleCategoryMenu',function(){
-				handleCategoryMenu('hide');
-				})
-			});
-//strangely enough, the click on the link which executes this function was also triggering the 'one' below.
-//putting the one/click event into a timeout solved the problem.
-		setTimeout(function(){$(document, 'a').one('click',function(e){handleCategoryMenu('hide');});},300);
-		}
-	}
-</script>
-
 
 
 </body>
