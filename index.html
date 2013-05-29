@@ -46,6 +46,7 @@ css files should be included before any .js file to ensure they are downloaded i
 -->
 <link rel="stylesheet" type="text/css" href="app-quickstart.css" />
 <link rel="stylesheet" type="text/css" href="app-fashion.css" />
+<link rel="stylesheet" type="text/css" href="_getprinting3d_styles.css" />
 <link rel="stylesheet" type="text/css" href="app-fashion/jquery-ui-1.10.2.custom.css" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -139,6 +140,8 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
     
 	
 	<!-- FOOTER -->
+	
+	<!-- Old footer newsletter
     <div class='footerNewsletter'>
 		<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
 			<div id='upToDate' class=' floatLeft marginLeft marginTop marginRight'>Join and Save!</div>
@@ -153,11 +156,12 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 			</div>
 		</form>
 	</div>	
-
+	-->
+	
     <div id='footerLinks' class='clearfix'>
 	    <div id='categories' class="bottomLinkListContainer">
     		<ul class='bottomLinkList'>
-               	<li class='listHead'>SHOP</li>
+               	<li class='listHead'>Shop</li>
 		        	<!-- place holder links, will need to replace safe.name later -->  
 				<li><a href='#top' class='footerLinkStyle' onClick="handleCategoryMenu('show');">Browse by category</a></li>
 				<li><a href='#!search?TAG=IS_BESTSELLER' class='footerLinkStyle bindByAnchor'>What's hot</a></li>
@@ -168,7 +172,7 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 		</div>
         <div id='help' class="bottomLinkListContainer">
         	<ul class='bottomLinkList'>
-            	<li class='listHead'>HELP</li>
+            	<li class='listHead'>Help</li>
 				<li><a href='#!company?show=about' class='footerLinkStyle bindByAnchor'>About</a></li>
 				<li><a href='#!company?show=contact' class='footerLinkStyle bindByAnchor'>Contact us</a></li>
 				<li><a href='#!company?show=faq' class='footerLinkStyle bindByAnchor'>FAQ</a></li>
@@ -180,7 +184,7 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 		</div>
         <div id='myaccount' class="bottomLinkListContainer">
             <ul class='bottomLinkList'>
-                <li class='listHead'>MY ACCOUNT</li>
+                <li class='listHead'>My Account</li>
                 <li class='hideIfLoggedIn'><a href='#!customer?show=newsletter'  class='footerLinkStyle bindByAnchor'>Create account</a></li>
                 <li class='hideIfLoggedIn'><a href='#!customer?show=myaccount' class='footerLinkStyle bindByAnchor'>Sign In</a></li>
                 <li class='hideIfLoggedOut'><a href='#!customer?show=myaccount' class='footerLinkStyle bindByAnchor'>My account</a></li>
@@ -189,6 +193,26 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
                 <li><a href='#!customer?show=orders' class='footerLinkStyle bindByAnchor'>Order tracking</a></li>
             </ul>
         </div>
+		<div class='footerNewsletter'>
+			<div class='listHead'> Newsletter</div>  
+			<div class='headerNewsletterSignUpContainer marginBottom'>              
+				<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
+					<fieldset class='borderNone noPadOrMargin'>
+						<div>
+							<input type='text'  maxlength='50' size='30' name='fullname' class='headerSubscribeFrm' placeholder='Full Name' />
+						</div>	
+		
+						<div id='headerNewsletterEmail'>
+							<input type='email'  maxlength='50' size='30' name='login' class='headerSubscribeFrm' placeholder='E-mail Address' />
+						</div>
+					</fieldset>
+					
+				
+				<input type='submit' class='socialIconContainer' value='SIGN UP!' id='headerSignUpButton'>
+				</form>
+			</div>
+			
+		</div>
 <!--
 uncomment and set links
         <div id='morefashion' class="bottomLinkListContainer">
@@ -254,39 +278,9 @@ COMMONLY EDITED TEMPLATES
 <div id='homepageTemplate' class='homeTemplate'>
 	<div class='mainBannerContainer clearfix'>
 		
-		<div class='mainBannerGraphic pointer' onClick="showContent('search',{'TAG':'IS_NEWARRIVAL'});"><img src='app-fashion/new_arrivals-703x294.jpg' width='703' height='294' alt='' /></div>
+		<div class='mainBannerGraphic pointer' onClick="showContent('search',{'TAG':'IS_NEWARRIVAL'});"><img src='images/mainBanner1.jpg' width='703' height='294' alt='' /></div>
 		
 		<div class='mainBannerNewsletter'>
-		
-			<div id='scoop'>GET THE SCOOP ON</div>
-			<div id='latest'>THE LATEST IN FASHION</div>
-				   
-			<div class='headerNewsletterSignUpContainer marginBottom'>              
-				<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
-					<fieldset class='borderNone noPadOrMargin'>
-						<div>
-							<input type='text'  maxlength='50' size='30' name='fullname' class='headerSubscribeFrm' placeholder='Full Name' />
-						</div>	
-		
-						<div id='headerNewsletterEmail'>
-							<input type='email'  maxlength='50' size='30' name='login' class='headerSubscribeFrm' placeholder='E-mail Address' />
-						</div>
-					</fieldset>
-					
-				
-				<input type='submit' class='socialIconContainer' value='SIGN UP!' id='headerSignUpButton'>
-				</form>
-			</div>
-			
-			<div class='socialIcons clearfix '>
-
-<div id='followUs'><img src='app-fashion/followus-190x11.png' width='190' height='11' alt='follow us...'></div>
-<div class='socialIconContainer'>
-	<div class='facebookIcon'><img src='app-fashion/facebook-32x32.png' width='32' height='32' alt='Facebook' ></div>
-	<div class='twitterIcon'><img src='app-fashion/twitter-32x32.png' width='32' height='32' alt='twitter' ></div>
-	<div class='youtubeIcon'><img src='app-fashion/youtube-32x32.png' width='32' height='32' alt='youtube' ></div>
-</div>
-			</div>
 			
 		</div>
 				

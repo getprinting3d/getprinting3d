@@ -157,7 +157,7 @@ FOOTER
 
 **************************************************************************************/
 
-
+/*
 .footerNewsletter {
 	background: #393b42;
 	height: 60px;
@@ -165,10 +165,10 @@ FOOTER
   	margin-right: auto;
 	padding-bottom: 10px;
 }
-
 .footerNewsletter .marginTop	{
 	margin-top:20px;
 	}
+*/
 #subscribeFrm	{margin:0 34px;}
 #upToDate {
 	padding-top:4px;
@@ -285,7 +285,7 @@ HOMEPAGE
 
 
 .mainBannerNewsletter {
-	background-color: #ce004e;
+	background-color: #F0F0F0;
 	width: 317px;
 	height: 294px;
 	float: right;
@@ -310,8 +310,6 @@ HOMEPAGE
 
 .headerNewsletterSignUpContainer {
 	width: 95%;
-	heigth: 75px;
-	background: #ce004e;
 	margin-right: auto;
 	margin-left: auto;	
 }
@@ -328,9 +326,9 @@ HOMEPAGE
 	height: 35px;
 	width: 70px;
 	text-align: center;
-	background: #a3033d;
+	background: #393b42;
 	border: 0 none;
-	color: white;
+	color: #f0f5ee;
 	margin-top: 10px;
 	margin-right: 10px;
 	float: right;
