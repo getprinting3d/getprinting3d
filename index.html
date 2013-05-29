@@ -113,14 +113,14 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 
         <div class='mainNavContainer'>
 		<ul class='topLinks'>
-			<li><a href='#' onClick='handleCategoryMenu(); return false;'>3D Software</a></li>
-			<li><a href='#!search?TAG=IS_BESTSELLER' class='bindByAnchor'>Personal Printers</a></li>
-			<li><a href='#!search?TAG=IS_BESTSELLER' class='bindByAnchor'>Pro 3D Printers</a></li>
-			<li><a href='#!search?TAG=IS_BESTSELLER' class='bindByAnchor'>Roland Mills</a></li>
-			<li><a href='#!search?TAG=IS_BESTSELLER' class='bindByAnchor'>Materials</a></li>
-			<li><a href='#!search?TAG=IS_NEWARRIVAL' class='bindByAnchor'>Pre-Owned Equipment</a></li>
-			<li><a href='#!search?TAG=IS_SALE' class='bindByAnchor'>3D Printed Items</a></li>
-			<li><a href='#!search?TAG=IS_CLEARANCE' class='bindByAnchor'>Accessories and Aux Equipment</a></li>
+			<li style="width:110px"><a href='#' onClick="return showContent('category',{'navcat' : '.a_engineering_software'});">3D Software</a></li>
+			<li style="width:140px"><a href='#' onClick="return showContent('category',{'navcat' : '.d_personal_3d_printers'});">Personal Printers</a></li>
+			<li style="width:130px"><a href='#' onClick="return showContent('category',{'navcat' : '.g_professional_3d_printers'});" class='bindByAnchor'>Pro 3D Printers</a></li>
+			<li><a href='#' onClick="return showContent('category',{'navcat' : '.k_srp_milling_systems'});">Roland Mills</a></li>
+			<li><a href='#' onClick="return showContent('category',{'navcat' : '.n_materials___consumables'});">Materials</a></li>
+			<li style="width:175px"><a href='#' onClick="return showContent('category',{'navcat' : '.s_demo___used_equipment'});">Pre-Owned Equipment</a></li>
+			<li style="width:145px"><a href='#' onClick="return showContent('category',{'navcat' : '.u3d_printed_parts'});">3D Printed Items</a></li>
+			<li><a href='#' onClick="return showContent('category',{'navcat' : '.ultrasonic_baths'});">Accessories</a></li>
 		</ul>
 		<div id='browseMenuContent' class='displayNone'>
 			<ul id='tier1categories' class='columnify'></ul>
@@ -278,10 +278,12 @@ COMMONLY EDITED TEMPLATES
 <div id='homepageTemplate' class='homeTemplate'>
 	<div class='mainBannerContainer clearfix'>
 		
-		<div class='mainBannerGraphic pointer' onClick="showContent('search',{'TAG':'IS_NEWARRIVAL'});"><img src='images/mainBanner1.jpg' width='703' height='294' alt='' /></div>
+		<div class='mainBannerGraphic pointer' onClick="showContent('search',{'TAG':'IS_NEWARRIVAL'});"><img src='images/mainBanner1.jpg' alt='' /></div>
 		
 		<div class='mainBannerNewsletter'>
-			
+			<a href="#" onClick="return showContent('category',{'navcat' : '.u3d_printed_parts.personalized_items'});"><img src="images/sideBanner1.jpg"/></a>
+			<img src="images/sideBannerBar.jpg"/>
+			<a href="#" onClick="return showContent('category',{'navcat' : '.d_personal_3d_printers'});"><img src="images/sideBanner2.jpg"/></a>
 		</div>
 				
 	</div>

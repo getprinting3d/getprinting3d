@@ -6,3 +6,12 @@
 	color: #555555;
 	margin-top: 20px;
 	}
+.sideline{
+	background: #E4E4E4;
+	padding:12px;
+	width: 18%;
+	margin: 10px 0px;
+}	
+.sideline a {
+	font-size: 18px;
+}	
