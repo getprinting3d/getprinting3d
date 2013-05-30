@@ -289,17 +289,11 @@ COMMONLY EDITED TEMPLATES
 	</div>
         
 
-	<section id='newArrivals'>
-		
+	<section id='newArrivals'>	
 		<div class='listHeader'>
-		<a href="#" onClick="return showContent('search',{'TAG':'IS_SALE'});" class='floatRight'>See all Sale Items</a>
-		<h2>Now On Sale</h2>
+			<h2>Popular Categories</h2>
 		</div>
-		
-	<ul id='homeProdSearchSale' data-bind='var: elastic-native({"size":"4","mode":"elastic-native","filter":{"term":{"tags":"IS_SALE"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-
-	
-
+			<ul id='homeProdSearchSale' data-bind='var: elastic-native({"size":"4","mode":"elastic-native","filter":{"term":{"tags":"IS_SALE"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
 	</section>
 	
 	<section id='bestSellers'>
