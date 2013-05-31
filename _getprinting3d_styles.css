@@ -15,3 +15,28 @@
 .sideline a {
 	font-size: 18px;
 }	
+button.quickView	{
+	border:1px solid #555555; 
+	border-radius: 6px;
+	background:#e4e4e4 no-repeat; 
+	color: #393b42;
+	padding:0; 
+	margin:0; 
+	width:84px; 
+	height:26px; 
+	z-index:95; 
+	cursor:pointer;
+	font-size: 13px;
+}
+.addToCartButton	{
+	cursor:pointer;
+	border:1px solid #555555 !important;
+	border-radius: 6px;
+	background:#e4e4e4 no-repeat !important; 
+	color: #393b42;
+	padding:0; 
+	margin:0; 
+	width:120px;
+	height:40px;
+	z-index:95;
+	}
