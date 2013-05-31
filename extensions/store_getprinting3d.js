@@ -55,6 +55,30 @@ var store_getprinting3d = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+			showDropDown : function ($tag) {
+			//app.u.dump('showing');
+			//console.log($tag.data('timeoutNoShow'));
+			if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow')=== "false") {
+			var $dropdown = $(".dropdown", $tag);
+			var height = 0;
+			$dropdown.show();
+			if($dropdown.data('height')){
+			height = $dropdown.data('height');
+			} else{
+			$dropdown.children().each(function(){
+			height += $(this).outerHeight();
+			});
+			}
+			if($tag.data('timeout') && $tag.data('timeout')!== "false"){
+			clearTimeout($tag.data('timeout'));
+			$tag.data('timeout','false');
+
+			}
+			$dropdown.stop().animate({"height":height+"px"}, 500);
+			return true;
+			}
+			return false;
+			},
 			showDropDownClick : function($tag){
 				//app.u.dump('showClick');
 				if(this.showDropDown($tag)){

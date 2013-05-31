@@ -112,64 +112,103 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
         
 
         <div class='mainNavContainer'>
-			<div class="mainNavLinks">
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.a_engineering_software'});">3D Software</div>
+					<div onClick="return showContent('category',{'navcat' : '.a_engineering_software'});" class="mainNavLinks">3D Software</div>
 						<div class="dropdown displayNone">
 						</div>
 				</div>
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.d_personal_3d_printers'});">Personal Printer</div>
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.d_personal_3d_printers'});">Personal Printers</div>
+						<div class="dropdown displayNone" style="left:105px">
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.bfb_3d_printers'});">BFB 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.cube_3d_printer'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+						</div>
+				</div>
+				<div class="pointer"
+					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
+					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.g_professional_3d_printers'});">Pro 3D Printers</div>
+						<div class="dropdown displayNone" style="left:250px">
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+						</div>
+				</div>
+				<div class="pointer"
+					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
+					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.k_srp_milling_systems'});">Roland Mills</div>
+						<div class="dropdown displayNone" style="left:380px">
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+						</div>
+				</div>
+				<div class="pointer"
+					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
+					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.n_materials___consumables'});">Materials</div>
+						<div class="dropdown displayNone" style="left:488px">
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+						</div>
+				</div>
+				<div class="pointer"
+					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
+					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.s_demo___used_equipment'});">Pre-Owned Equipment</div>
 						<div class="dropdown displayNone">
 						</div>
 				</div>
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.g_professional_3d_printers'});">Pro 3D Printers</div>
-						<div class="dropdown displayNone">
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.u3d_printed_parts'});">3D Printed Items</div>
+						<div class="dropdown displayNone" style="left:752px">
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
 						</div>
 				</div>
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.k_srp_milling_systems'});">Roland Mills</div>
-						<div class="dropdown displayNone">
+					<div class="mainNavLinks" onClick="return showContent('category',{'navcat' : '.ultrasonic_baths'});">Accessories</div>
+						<div class="dropdown displayNone" style="left:889px; width: 200px;">
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.a_rapman_3d_printer_kits'});">BFB RapMan 3D Printer Kits</div>
 						</div>
 				</div>
-				<div class="pointer"
-					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
-					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.n_materials___consumables'});">Materials</div>
-						<div class="dropdown displayNone">
-						</div>
-				</div>
-				<div class="pointer"
-					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
-					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.s_demo___used_equipment'});">Pre-Owned Equipment</div>
-						<div class="dropdown displayNone">
-						</div>
-				</div>
-				<div class="pointer"
-					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
-					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.u3d_printed_parts'});">3D Printed Items</div>
-						<div class="dropdown displayNone">
-						</div>
-				</div>
-				<div class="pointer"
-					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
-					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
-					<div width="110" onClick="return showContent('category',{'navcat' : '.ultrasonic_baths'});">Accessories</div>
-						<div class="dropdown displayNone">
-						</div>
-				</div>
-			</div>
         </div>
 		<!--					
 		<ul class='topLinks'>
