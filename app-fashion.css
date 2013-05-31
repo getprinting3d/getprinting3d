@@ -109,21 +109,7 @@ HEADER
 .mainNavContainer ul, .mainNavContainer li	{list-style:none; margin:0; padding:0;}
 .mainNavContainer ul.topLinks li	{width:10%; float:left; display:block;}
 
-.mainNavContainer a:hover	{
-	color: #73cc59;
-	}
 
-.mainNavContainer a {
-	font-weight: bold;
-	text-decoration:none;
-	font-size:15px;
-	text-align: center;
-	color: 	#F0F5ee;
-	line-height: 34px;
-	display:block;
-	margin:2px 2px 0 2px;
-	padding-bottom:2px; /* compensates for no margin, which is used for a hover effect */
-	}
 
 #browseMenuContent	{
 	background:#393b42; 

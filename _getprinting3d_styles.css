@@ -40,3 +40,43 @@ button.quickView	{
 	height:40px;
 	z-index:95;
 	}
+.mainNavContainer div {
+	font-weight: bold;
+	text-decoration:none;
+	font-size:14px;
+	text-align: center;
+	color: 	#F0F5ee;
+	line-height: 34px;
+	display:block;
+	margin:0px 6px;
+	padding-bottom:2px; /* compensates for no margin, which is used for a hover effect */
+	}
+.mainNavContainer div:hover	{
+	color: #73cc59;
+	}
+.mainNavLinks div{
+	display:block;
+	float:left;
+}
+.dropdown {
+	height: 0px;
+	overflow: hidden;
+	background: none repeat scroll 0 0 red;
+	border-color: blue;
+	border-image: none;
+	border-style: solid;
+	border-width: 1px 1px 3px;
+	position: absolute;
+	z-index:99999;
+}
+.dropdownLink {
+	background: red;
+	border-top: 1px solid #E0E6E9;
+	color: yellow;
+	cursor: pointer;
+	display: block;
+	line-height: 22px;
+	padding: 1px 4px 1px 16px;
+	width: 100%;
+	float: left;
+}
