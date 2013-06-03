@@ -375,7 +375,7 @@ Product list styles
 
 */
 
-li.productListItem	{width:25%; margin:0 0 24px 0;}
+li.productListItem	{width:23%; margin:0px 8px 24px 8px; background: #ffffff;}
 .productListItem .cents	{
 	position: relative; bottom: 0.2em; font-size: 70%;	
 	}
