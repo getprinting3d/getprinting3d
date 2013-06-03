@@ -64,6 +64,7 @@ button.quickView	{
 	z-index:99999;
 	top:34px;
 	left: 0px;
+	height: 0px;
 }
 .dropdown div {
 	font-size:13px;
