@@ -389,7 +389,7 @@ li.productListItem	{width:23%; margin:0px 10px 24px 10px; background: #ffffff;}
 	padding:6px;
 	}
 /* this height only impacts prodlists, not results, for addition of reviews summary */
-.productList li.productListItem 	{height:270px;}
+.productList li.productListItem 	{height:250px;}
 
 .productListItem .priceDetail {
 	margin-top: 12px;		
