@@ -47,7 +47,6 @@ button.quickView	{
 	color: 	#F0F5ee;
 	line-height: 34px;
 	display:block;
-	margin:0px 10px;
 	}
 .mainNavContainer div:hover	{
 	color: #73cc59;
@@ -56,6 +55,12 @@ button.quickView	{
 	display:block;
 	float:left;
 	position:relative;
+}
+.mainNavLine{
+	border-right: 2px solid #555555;
+	height: 30px;
+	margin-top:2px;
+	padding: 0px 11px;
 }
 .dropdown {
 	overflow: hidden;
