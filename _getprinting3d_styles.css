@@ -70,9 +70,11 @@ button.quickView	{
 	font-size:13px;
 	line-height:33px;
 }
+.bottomBanner img{
+	width:100%;
+}
 
-
-
+/***** CSS required to get jQuery UI Roller working****/
 
 .ui-tabs {
     padding: 0.2em;
