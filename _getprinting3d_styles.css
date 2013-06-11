@@ -64,16 +64,19 @@ button.quickView	{
 }
 .dropdown {
 	overflow: hidden;
-	background: #393b42;
+	background: #292b32;
 	position: absolute;
 	z-index:99999;
 	top:34px;
 	left: 0px;
 	height: 0px;
+	border-radius: 0px 0px 7px 7px;
 }
 .dropdown div {
-	font-size:13px;
-	line-height:33px;
+    border-top: 2px solid #555555;
+    font-size: 12px;
+    line-height: 33px;
+    padding: 0 12px;
 }
 
 .mainBannerContainer {
