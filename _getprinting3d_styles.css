@@ -120,3 +120,6 @@ button.quickView	{
     content: "";
     display: table;
 }
+.ui-helper-clearfix:after {
+    clear: both;
+}
