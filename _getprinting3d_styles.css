@@ -70,10 +70,38 @@ button.quickView	{
 	font-size:13px;
 	line-height:33px;
 }
+
+.mainBannerContainer {
+	overflow:hidden;
+	margin-bottom:10px;
+	position:relative;
+	}
+
+.mainBannerGraphic {
+	width: 750px;	
+	height: 280px;
+	position:absolute; left:0; top:0;
+	}
+
+.mainBannerSidebar {
+	background-color: #FFFFFF;
+	width: 260px;
+	height: 280px;
+	float: right;
+	}
+
+.mainBannerBottom{
+	display:inline-block;
+	margin-top: 9px;
+}
+.mainBannerBottom img{
+	width: 335px;
+	margin:0px 1px;
+}
+
 .bottomBanner img{
 	width:100%;
 }
-
 /***** CSS required to get jQuery UI Roller working****/
 
 .ui-tabs {
