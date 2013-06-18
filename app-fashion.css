@@ -411,7 +411,6 @@ li.productListItem	{width:23%; margin:0px 10px 24px 10px; background: #ffffff;}
 
 .image1	{z-index:11; border:1px solid #efefef; position:relative;} /* zindex is so tags appear behind image */
 .prodThumbs a	{margin:6px 6px 0 0; float:left; display:block;}
-.productPage h1	{font-size:1.4em; margin-bottom:12px;}
 
 
 .imageContainer > div {position:relative;}

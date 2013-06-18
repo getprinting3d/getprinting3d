@@ -230,8 +230,8 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 
 <!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
 	<div id='appNav'>
-		<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
-		<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
+		<button class='displayNone prodDetailNextItemButton' style="font-size:0em" data-app-role='prodDetailNextItemButton'>Next</button>
+		<button class='displayNone prodDetailPrevItemButton' style="font-size:0em" data-app-role='prodDetailPrevItemButton'>Previous</button>
 	</div>
     
     <!-- WHERE THE MAGIC HAPPENS -->
@@ -740,7 +740,9 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 		<li class='prodDescTab'><a href='#prodDesc'>Description</a></li>
 		<li class='prodDetailTab displayNone' data-bind='var: product(zoovy:prod_detail); format:showIfSet;'><a href='#prodSpecs'>Specs</a></li>
 		<li class='prodFeaturesTab displayNone' data-bind='var: product(zoovy:prod_features); format:showIfSet;'><a href='#prodFeatures'>Features</a></li>
+		<!-- Taking out temporarily
 		<li class='prodReviewsTab'><a href='#prodReviews'>Reviews</a></li>
+		-->
 		<li class='prodVideoTab displayNone' data-bind='var: product(youtube:videoid); format:showIfSet;'><a href='#prodVideo'>Video</a></li>
 		<li class='prodAccessoriesTab displayNone' data-bind='var: product(zoovy:accessory_products); format:showIfSet;'><a href='#prodAccessories'>Accessories</a></li>
 	</ul>
@@ -789,10 +791,12 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 	</td>
 </tr>
 </table>
-<div class='prodlistRelatedContainer'>
-	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; before:<h2>Similar Items</h2>; withReviews:1;"></ul>
+<div class='prodlistRelatedContainer similarItems'>
+	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; before:<h2>Similar Items</h2>; withReviews:1; items_per_page: 4;"></ul>
 </div>
-
+<div class='prodlistRelatedContainer similarItems'>
+	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; before:<h2>Accessories</h2>; withReviews:1; items_per_page: 4;"></ul>
+</div>
 
 </div><!-- productTemplate -->
 

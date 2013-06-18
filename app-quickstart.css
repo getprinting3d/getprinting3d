@@ -253,7 +253,7 @@ PRODUCT DETAIL PAGE (productTemplate)
 .prodViewerContainer .prodThumbs div	{float:left; margin:12px 12px 0 0;}
 
 
-.prodSummaryContainer	{width:90%;}
+.prodSummaryContainer	{width:90%; padding: 10px 0px 0px 35px;}
 
 
 .tabbedProductContent .prodReviewsTab	{display:block;} /* reviews tab always shows up */
