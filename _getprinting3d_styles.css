@@ -118,6 +118,8 @@ button.quickView	{
     border-radius: 4px 4px 4px 4px;
     margin: 10px 0;
     padding: 3px 8px;
+	color: #393B42;
+    font-size: 22px;
 }
 .productListItem .imageAndTags{
 	margin-top:12px;
