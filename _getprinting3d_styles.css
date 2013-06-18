@@ -119,6 +119,13 @@ button.quickView	{
     margin: 10px 0;
     padding: 3px 8px;
 }
+.productListItem .imageAndTags{
+	margin-top:12px;
+}
+
+
+
+
 
 /***** CSS required to get jQuery UI Roller working****/
 
