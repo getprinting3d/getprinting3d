@@ -132,7 +132,9 @@ button.quickView	{
 
 
 
-/***** CSS required to get jQuery UI Roller working****/
+/************************************
+JQUERY UI FIX
+************************************/
 
 .ui-tabs {
     padding: 0.2em;
@@ -185,4 +187,20 @@ button.quickView	{
 }
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
 	float:right;
+}
+
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+    padding: 0.4em;
+    text-indent: -10000000px;
+}
+
+.ui-button .ui-button-text {
+    display: block;
+    line-height: normal;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    height: 20px;
+    padding: 1px;
+    width: 21px;
 }
