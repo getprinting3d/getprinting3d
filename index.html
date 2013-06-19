@@ -140,7 +140,7 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 					<div class="dropdown displayNone" style="left:255px">
 						<div href='#!category?navcat=.g_professional_3d_printers.3d_systems_zprinters' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this));' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this));'
 						onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent());">
-							<div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters'});">
 								3D Systems ZPrinters
 							</div>
 							<div class="hoverout">
