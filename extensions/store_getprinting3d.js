@@ -56,28 +56,28 @@ var store_getprinting3d = function() {
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
 			showDropDown : function ($tag) {
-			//app.u.dump('showing');
-			//console.log($tag.data('timeoutNoShow'));
-			if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow')=== "false") {
-			var $dropdown = $(".dropdown", $tag);
-			var height = 0;
-			$dropdown.show();
-			if($dropdown.data('height')){
-			height = $dropdown.data('height');
-			} else{
-			$dropdown.children().each(function(){
-			height += $(this).outerHeight();
-			});
-			}
-			if($tag.data('timeout') && $tag.data('timeout')!== "false"){
-			clearTimeout($tag.data('timeout'));
-			$tag.data('timeout','false');
+				//app.u.dump('showing');
+				//console.log($tag.data('timeoutNoShow'));
+				if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow')=== "false") {
+				var $dropdown = $(".dropdown", $tag);
+				var height = 0;
+				$dropdown.show();
+				if($dropdown.data('height')){
+				height = $dropdown.data('height');
+				} else{
+				$dropdown.children().each(function(){
+				height += $(this).outerHeight();
+				});
+				}
+				if($tag.data('timeout') && $tag.data('timeout')!== "false"){
+				clearTimeout($tag.data('timeout'));
+				$tag.data('timeout','false');
 
-			}
-			$dropdown.stop().animate({"height":height+"px"}, 500);
-			return true;
-			}
-			return false;
+				}
+				$dropdown.stop().animate({"height":height+"px"}, 500);
+				return true;
+				}
+				return false;
 			},
 			showDropDownClick : function($tag){
 				//app.u.dump('showClick');
@@ -111,10 +111,41 @@ var store_getprinting3d = function() {
 			},
 
 			hideDropDownOnSelect : function($tag){
-			this.hideDropDown($tag);
-			$tag.data('timeoutNoShow', setTimeout(function(){$tag.data('timeoutNoShow', 'false');}, 500));
-			}
+				this.hideDropDown($tag);
+				$tag.data('timeoutNoShow', setTimeout(function(){$tag.data('timeoutNoShow', 'false');}, 500));
+				},
 			
+			showDropout : function ($tag, $parentparent, $parent, wd) {
+				var $dropout = $(".dropout", $tag);
+				var width = wd;
+				$dropout.children().each(function(){
+				$(this).outerWidth(true);
+				});
+				$parentparent.css({"width":720+"px"},1000);
+				$parent.stop().animate({"width":700+"px"}, 1000);
+				$dropout.stop().animate({"width":width+"px"}, 1000);
+				},
+
+			//ANIMATE RETRACTION OF MAIN CATEGORY 2ND LEVEL DROPOUT MENU
+			hideDropout : function ($tag, $parentparent, $parent) {
+				$(".dropout", $tag).stop().animate({"width":"0px"}, 1000);
+				$parent.stop().animate({"width":460+"px"}, 1000);
+				$parentparent.css({"width":485+"px"}, 1000);
+				},
+			showHoverout : function ($tag) {
+				var $hoverout = $(".hoverout", $tag);
+				var width = 240;
+				$hoverout.children().each(function(){
+				$(this).outerWidth(true);
+				});
+				$hoverout.stop().animate({"width":width+"px",opacity:1}, 0);
+				},
+
+			//ANIMATE RETRACTION OF HOVERPRODUCT DROPOUT MENU
+			hideHoverout : function ($tag) {
+				$(".hoverout", $tag).stop().animate({"width":"0px",opacity:0}, 0);
+				}
+				
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
