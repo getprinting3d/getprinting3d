@@ -130,8 +130,6 @@ button.quickView	{
 
 
 
-
-
 /************************************
 JQUERY UI FIX
 ************************************/
@@ -203,4 +201,10 @@ JQUERY UI FIX
     height: 22px;
     padding: 1px;
     width: 24px;
+}
+/* Just broke almost every other button...
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	height: 22px;
+	padding: 1px;
+	width: 24px;
 }
