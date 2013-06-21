@@ -62,11 +62,14 @@ var store_getprinting3d = function() {
 				var $dropdown = $(".dropdown", $tag);
 				var height = 0;
 				$dropdown.show();
+				if($dropdown.data('width')){
+					$dropdown.css("width",$dropdown.data('width'));
+				}
 				if($dropdown.data('height')){
-				height = $dropdown.data('height');
+					height = $dropdown.data('height');
 				} else{
-				$dropdown.children().each(function(){
-				height += $(this).outerHeight();
+					$dropdown.children().each(function(){
+					height += $(this).outerHeight();
 				});
 				}
 				if($tag.data('timeout') && $tag.data('timeout')!== "false"){

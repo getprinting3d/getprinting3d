@@ -54,9 +54,9 @@ button.quickView	{
 	}
 .mainNavContainer .mainNavLinks{
 	display:block;
-	float:left;
 	position:relative;
 }
+.mainNavContainer > div{float:left; position:relative;}
 .mainNavLine{
 	border-right: 2px solid #555555;
 	height: 30px;
