@@ -208,3 +208,6 @@ JQUERY UI FIX
 	padding: 1px;
 	width: 24px;
 }
+*/
+
+.ui-button-icon-only .ui-button-text { display:none;}
