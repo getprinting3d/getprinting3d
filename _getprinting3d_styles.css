@@ -183,9 +183,6 @@ JQUERY UI FIX
 .ui-helper-clearfix:after {
     clear: both;
 }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
-	float:right;
-}
 
 .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
     padding: 0.4em;
@@ -197,11 +194,6 @@ JQUERY UI FIX
     line-height: normal;
 }
 
-.ui-dialog .ui-dialog-titlebar-close {
-    height: 22px;
-    padding: 1px;
-    width: 24px;
-}
 /* Just broke almost every other button...
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
 	height: 22px;
