@@ -1,0 +1,217 @@
+{
+   ".n_materials___consumables.mill_stock" : {
+      "fl" : "c-20070422"
+   },
+   ".g_professional_3d_printers.3d_systems_projet" : {
+      "fl" : "c-20070422",
+      "picture1" : ""
+   },
+   ".evanston" : {
+      "caption2" : "Special thanks for Mayor Elizabeth Tisdahl, Chuck Happ, Carolyn Dellutri, Patrick Hughes, Tim Lavengood, Alderman Don Wilson, Ben Staub, Linda Staub, Jake and Julia Staub and many others.",
+      "caption1" : "3D Printing Showroom",
+      "picture2" : "evanstonstore/getprinting3d_ribbon_cutting_2.jpg",
+      "fl" : "1030",
+      "picture1" : "evanstonstore/photo_jun_05_2_17_49_pm.jpg",
+      "description" : "= Welcome to GetPrinting3D - Evanston =\n== Retail Showroom & Demonstration Caf\u00e9 ==\n820 Davis St. Suite 111 (entrance is two doors to left of the main revolving doors)\n\nVisit our Facebook page to see what's going on and please give us a \"like\"\n\nwww.facebook.com/getprinting3d\n\n\n\n== Our Mayoral Ribbon Cutting was held June 5, 2013 and was a huge success thanks to all involved. ==\n\nWe have big plans for our 3D printing venue which inclues:\n* Demonstrations on all the printers in the showroom - Cube and CubeX, ProJet 1500, ProJet 450 (ZPrinter) full-color printer and the High-definition ProJet 3500HDMax\n* Presentations on various aspects of 3D printing technologies for businesses, educators, students of all ages and others as desired\n* 3D scanning and modeling demonstrations\n* \"Print your model\" services on the various 3D printers\n* Meeting venue for Chambers, Societies, Organizations and others\n* Grade school through college individualized tours and interactive experiences\n* and more!"
+   },
+   ".n_materials___consumables.projet_wax" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.roland_accessories.mdx-40a" : {
+      "fl" : "c-20111020"
+   },
+   ".ultrasonic_baths" : {
+      "fl" : "c-20060921"
+   },
+   ".n_materials___consumables.projet_plastic" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.roland_accessories.mdx-540" : {
+      "fl" : "c-20070422"
+   },
+   ".g_professional_3d_printers" : {
+      "fl" : "c-20060921"
+   },
+   ".n_materials___consumables.zprinter.binders" : {
+      "fl" : "c-20070422"
+   },
+   ".u3d_printed_parts.personalized_items" : {
+      "fl" : "c-20070423"
+   },
+   ".n_materials___consumables.zprinter" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.srp_machine_selector" : {
+      "fl" : "c-20080114",
+      "description" : "=Model \t \t \tPrice \t \tBuild Size \t \t \tMaterials =\n*MDX-15 \t \t \t$3,495 \t \t6\" x 4\" x 2.4\" \t \t \tFoams, plastics, wood\n*MDX-20 \t \t \t$4,995 \t \t8\" x 6\" x 2.4\" \t \t \tFoams, plastics, wood \t\n*MDX-40A \t         $7,995              12\" x 12\" x 4.1            Foams, plastics, tooling board, wood\n*MDX-40A 4th axis                            4.7\" dia. x 10.6\" \t     Foams, plastics, tooling board, wood\n*MDX-540 \t         $20,995 \t          19.6\" x 15.7\" x 6.1\"     Foams, plastics, wood, light medals (brass, aluminum, copper)\n\nwith 4th axis*;\n7\" dia. x 14\"\n\t \t4th axis*, t-slot table, cover \tG-Code supported, but not required\n\"S\" = high precision ball screws provide ultra high surface smoothness and repeat accuracy\n\"A\" = Automatic tool changer** included (4 tools)\nMDX-540S \t$26,995\nMDX-540A \t$31,995\nMDX-540SA \t$36,995\n\n \nOptions explained:\n\n*Rotary 4th axis: automatically rotates and positions your part for 360 modeling. Available on the MDX-40A and MDX-540 series.\n**Automatic tool changer: Eliminates manual tool changes for unattended prototyping."
+   },
+   ".n_materials___consumables.zprinter.multi_purpose_materials" : {
+      "fl" : "c-20070422"
+   },
+   ".ultrasonic_baths.ultrasonic_baths" : {
+      "fl" : "c-20070422"
+   },
+   ".d_personal_3d_printers.bfb_3d_printers" : {
+      "fl" : "c-20070422"
+   },
+   ".g_professional_3d_printers.3d_systems_zprinters.zprinter_450" : {
+      "fl" : "c-20111107",
+      "banner_top" : "ALT=&IMG=zprinters%2fzprint_banner800%2ejpg&LINK="
+   },
+   ".g_professional_3d_printers.3d_systems_zprinters.zprinter_150" : {
+      "fl" : "c-20111107",
+      "banner_top" : "ALT=&IMG=zprinters%2fzprint_banner800%2ejpg&LINK="
+   },
+   ".g_professional_3d_printers.3d_systems_zprinters" : {
+      "dynimage1" : "images=zprinters/zprint_banner.jpg\nlinks=\npauses=2000\nblank_behavior=none\n",
+      "banner1" : "zprinters/zprint_banner.jpg",
+      "fl" : "c-20070422",
+      "picture1" : "zprinters/zprint_banner.jpg",
+      "description2" : "= Fastest Print Speed =\n*5x-10x faster than all other technologies\n*Output multiple models in hours, not days\n*Build multiple models at the same time\n*Support an entire engineering department or classroom with ease\n\n= Use Color to Dramatically Communicate Design Intent =\n== Uniquely Multicolor ==\n*Produce realistic color models without paint\n*Better evaluate the look, feel, and style of product designs\n*3D print text labels, logos, design comments, or images directly onto models\n*Multiple print heads provide the best range of accurate and consistent colors\n*Full 24-bit color, just like a 2D printer. Produce millions of distinct colors\n*High-definition 3D printing produces models with complex geometries and small, detailed features\n*3D print the most intricate detail, such as a thin wall on a mechanical prototype or a railing on an architectural model\n\n= Save Money Every Day =\n== Lowest Operating Cost ==\n*One-fifth the cost of other technologies\n*Finished parts cost $.20 USD per cubic centimeter  in materials\n*Based on reliable, affordable inkjet technology\n*Unused materials are recycled for the next build, eliminating waste\n\n= Spend time generating ideas, not operating a 3D printer =\n== Easy to Use ==\n*Requires minimal training and expertise\n*Only ZPrinters perform most operations automatically\n*Automated setup, self monitoring\n*Automated powder loading and recycling\n*Snap-in binder cartridges\n*Intuitive control panel for easy operation\n\n= Use in Any Standard Office or School Environment =\n== Safe and Office Friendly ==\n*Quiet, safe, odor free\n*Closed-loop powder loading, removal and recycling\n*Continuous negative pressure contains airborne  particles within the machine\n*Eco-friendly, non-hazardous build material\n*Zero liquid waste\n*No physical support structures to remove with dangerous cutting tools or toxic chemicals\n*Noise-suppression technologies for quiet, intrusion-free operation ",
+      "description" : "= The Fastest, Most Affordable, Color 3D Printing =\n\nZPrinters set the standard for speed, color, affordability and ease of use. Our 3D printers suit a wide variety of customer needs, from high school education through the most demanding commercial environments. In addition, 3D Systems provides 3D printing materials to suit many applications. Get More Models, Sooner \n\n",
+      "banner_top" : "ALT=&IMG=zprinters%2fzprint_banner%2ejpg&LINK="
+   },
+   ".n_materials___consumables.silicone" : {
+      "fl" : "c-20070422"
+   },
+   ".ultrasonic_baths.surge_suppressors" : {
+      "fl" : "c-20111020"
+   },
+   ".g_professional_3d_printers.3d_systems_zprinters.zprinter_250" : {
+      "fl" : "c-20111107"
+   },
+   ".a_engineering_software" : {
+      "fl" : "c-20060921"
+   },
+   ".g_professional_3d_printers.3d_systems_zprinters.zprinter_650" : {
+      "fl" : "c-20111107",
+      "banner_top" : "ALT=&IMG=zprinters%2fzprint_banner800%2ejpg&LINK="
+   },
+   ".n_materials___consumables.felix_pla" : {
+      "fl" : "c-20070422"
+   },
+   ".ultrasonic_baths.ups_systems" : {
+      "fl" : "c-20070422"
+   },
+   ".d_personal_3d_printers.cube_3d_printer" : {
+      "link2" : "",
+      "picture2" : "",
+      "fl" : "c-20070422",
+      "description2" : "== Frequent Material Buyers get FREE SHIPPING!...Stay tuned for more information ==",
+      "picture3" : "",
+      "description" : "",
+      "prodlist1" : "&SORTBY=PRICE&FORMAT=CUSTOM&SRC=&ALTERNATE=0&SIZE=&SHOWSKU=&SHOWQUANTITY=0&",
+      "prodlist_custom" : "&SORTBY=PRICE&FORMAT=CUSTOM&SRC=&ALTERNATE=0&SHOWSKU=&SHOWQUANTITY=0&"
+   },
+   ".d_personal_3d_printers.projet_1000_1500_3d_printers" : {
+      "fl" : "c-20070422"
+   },
+   ".n_materials___consumables.milling_supplies" : {
+      "fl" : "c-20081223"
+   },
+   ".k_srp_milling_systems" : {
+      "banner2" : "roland/srp2.jpg",
+      "fl" : "c-20060921",
+      "banner3" : "roland/srp3.jpg",
+      "description" : "= Roland subtractive rapid prototyping machines provide snap-fit, functional parts and prototypes milled from a wide variety of materials with smooth surface finish, tight tolerances and a low cost of ownership. =",
+      "dynimage1" : "images=rdicompany/srp_topline13.jpg\nlinks=\npauses=100\nblank_behavior=none\n",
+      "banner1" : "rdicompany/srp_questions13.jpg",
+      "banner4" : "roland/srp1.jpg",
+      "banner1_link" : "mailto:sales@rapid-direction.com"
+   },
+   ".n_materials___consumables" : {
+      "fl" : "c-20060921"
+   },
+   ".n_materials___consumables.cube_materials" : {
+      "fl" : "c-20070422",
+      "picture1" : "fastrp/getheaderscubemat.jpg",
+      "picture3" : "fastrp/3dprintercategorysidebarabsvspla.jpg",
+      "prodlist1_header" : "Cube Materials",
+      "prodlist_custom" : "&SORTBY=NONE&FORMAT=CUSTOM&SRC=&ALTERNATE=0&SIZE=&SHOWSKU=&SHOWQUANTITY=0&"
+   },
+   ".d_personal_3d_printers.felix_printers" : {
+      "fl" : "c-20070422"
+   },
+   ".g_professional_3d_printers.3d_systems_zprinters.zprinter_350" : {
+      "fl" : "c-20111107",
+      "banner_top" : "ALT=&IMG=zprinters%2fzprint_banner800%2ejpg&LINK="
+   },
+   ".k_srp_milling_systems.roland_accessories.mdx-20_15" : {
+      "fl" : "c-20070422"
+   },
+   ".d_personal_3d_printers" : {
+      "dynimage1" : "images=banners/teambastechrdilogofastrp.jpg,banners/team_bastech_logo.jpg,banners/get3dwebstorelogo.png,banners/rdi_400.jpg\nlinks=,,,\npauses=2000,2000,2000,2000\nblank_behavior=none\n",
+      "banner1" : "",
+      "picture2" : "",
+      "fl" : "c-20060921",
+      "picture1" : "3d/180x30.jpg",
+      "prodlist" : "&SORTBY=NONE&FORMAT=CUSTOM&SRC=&ALTERNATE=1&SIZE=&SHOWSKU=&SHOWQUANTITY=0&",
+      "prodlist_custom" : "&SORTBY=NAME&FORMAT=CUSTOM&SRC=&ALTERNATE=0&SIZE=&SHOWSKU=&SHOWQUANTITY=0&"
+   },
+   ".n_materials___consumables.zprinter.additional_items" : {
+      "fl" : "c-20070422"
+   },
+   ".u3d_printed_parts" : {
+      "fl" : "c-20060921"
+   },
+   ".d_personal_3d_printers.a_rapman_3d_printer_kits" : {
+      "link2" : "https://ssl.zoovy.com/c=cAGpDr9UsU0RnWgYPAaEdbGHh/s=www.getprinting3d.com/category/n_materials___consumables.bfb_-_rapman_materials/",
+      "picture2" : "bits/bfb3dtouchmaterials.jpg",
+      "fl" : "c-20070422",
+      "description2" : "These 3D Printer Kits give you the satisfaction that comes with assembling an amazing machine. If you're looking for a pre-assembled 3D Printer, see our Cube and 3D Touch printers.",
+      "description" : "FInd all your material needs here"
+   },
+   ".d_personal_3d_printers.projet_personal_printers" : {
+      "fl" : "c-20070422"
+   },
+   ".n_materials___consumables.milling_supplies.collets" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.mdx-40a" : {
+      "fl" : "c-20070422"
+   },
+   ".s_demo___used_equipment" : {
+      "banner1" : "rdicompany/demo_topline13.jpg",
+      "fl" : "c-20070815",
+      "description" : "= Check out RDI's Certified Demo and Used Equipment! ="
+   },
+   ".n_materials___consumables.bfb_-_rapman_materials" : {
+      "fl" : "c-20070422",
+      "picture1" : "getprinting3d/getheaders.jpg",
+      "picture3" : "fastrp/3dprintercategorysidebarabsvspla.jpg",
+      "prodlist1" : "&SORTBY=NONE&FORMAT=CUSTOM&SRC=&ALTERNATE=1&SIZE=&SHOWSKU=&SHOWQUANTITY=0&"
+   },
+   ".d_personal_3d_printers.z-printers" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.milling_supplies.end_mills" : {
+      "fl" : "c-20070422",
+      "picture1" : ""
+   },
+   ".n_materials___consumables.milling_supplies.end_mills" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.mdx-540" : {
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.roland_accessories" : {
+      "dynimage1" : "images=roland/rol_acc_topline13.jpg\nlinks=\npauses=2000\nblank_behavior=none\n",
+      "fl" : "c-20070422"
+   },
+   ".k_srp_milling_systems.milling_supplies" : {
+      "fl" : "c-20070422"
+   },
+   ".zcompare" : {
+      "fl" : "c-20070926",
+      "description" : "Product comparison page\n\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf\nsdf"
+   },
+   ".zcompare.learn_z-printers" : {
+      "fl" : "c-20080114"
+   },
+   ".k_srp_milling_systems.mdx-20_15" : {
+      "fl" : "c-20070422"
+   },
+   ".n_materials___consumables.zprinter.infiltrants" : {
+      "fl" : "c-20070422"
+   }
+}
