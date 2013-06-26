@@ -68,8 +68,8 @@ var store_getprinting3d = function() {
 				if($dropdown.data('height')){
 					height = $dropdown.data('height');
 				} else{
-					$dropdown.children().each(function(){
-					height += $(this).outerHeight();
+				$dropdown.children().each(function(){
+				height += $(this).outerHeight();
 				});
 				}
 				if($tag.data('timeout') && $tag.data('timeout')!== "false"){
@@ -104,7 +104,7 @@ var store_getprinting3d = function() {
 				$tag.data('timeout',setTimeout(function(){$(".dropdown", $tag).hide();},500));
 				return true;
 			},
-
+			
 			hideDropDownClick : function($tag){
 				//app.u.dump('hideClick');
 				if(this.hideDropDown($tag)){
@@ -117,7 +117,7 @@ var store_getprinting3d = function() {
 				this.hideDropDown($tag);
 				$tag.data('timeoutNoShow', setTimeout(function(){$tag.data('timeoutNoShow', 'false');}, 500));
 				},
-			
+				
 			showDropout : function ($tag, $parentparent, $parent, wd) {
 				var $dropout = $(".dropout", $tag);
 				var width = wd;
@@ -135,20 +135,23 @@ var store_getprinting3d = function() {
 				$parent.stop().animate({"width":460+"px"}, 1000);
 				$parentparent.css({"width":485+"px"}, 1000);
 				},
-			showHoverout : function ($tag) {
+			showHoverout : function ($tag, $parent) {
 				var $hoverout = $(".hoverout", $tag);
-				var width = 240;
+				var width = 80;
 				$hoverout.children().each(function(){
 				$(this).outerWidth(true);
 				});
 				$hoverout.stop().animate({"width":width+"px",opacity:1}, 0);
+				$parent.css({"height":"inherit"});
+				$parent.css({"width":280+"px"});
 				},
 
 			//ANIMATE RETRACTION OF HOVERPRODUCT DROPOUT MENU
-			hideHoverout : function ($tag) {
+			hideHoverout : function ($tag, $parent) {
 				$(".hoverout", $tag).stop().animate({"width":"0px",opacity:0}, 0);
+				$parent.css({"width":180+"px"});
 				}
-
+				
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

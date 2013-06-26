@@ -139,13 +139,13 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
 					<div class="mainNavLinks mainNavLine" onClick="return showContent('category',{'navcat' : '.g_professional_3d_printers'});">Pro 3D Printers</div>
-					<div class="dropdown displayNone" data-width="178px">
-						<div href='#!category?navcat=.g_professional_3d_printers.3d_systems_zprinters' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this));' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this));'
+					<div class="dropdown down displayNone" data-width="265px">
+						<div href='#!category?navcat=.g_professional_3d_printers.3d_systems_zprinters' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this), $(this).parent());' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this), $(this).parent());'
 						onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent());">
 							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters'});">
 								3D Systems ZPrinters
 							</div>
-							<div class="hoverout">
+							<div class="hoverout floatRight displayNone">
 								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_150'});">ZPrinter 150</div>
 								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_250'});">ZPrinter 250</div>
 								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_350'});">ZPrinter 350</div>

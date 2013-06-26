@@ -86,6 +86,8 @@ button.quickView	{
     line-height: 33px;
     padding: 0 12px;
 }
+.hoverout {position:relative; top:-37px; width:0; opacity:0;}
+.hoverout div {width:200px;}
 
 .mainBannerContainer {
 	overflow:hidden;
