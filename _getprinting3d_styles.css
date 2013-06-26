@@ -137,6 +137,15 @@ button.quickView	{
 	margin-top:12px;
 }
 
+.quickviewProdName{
+	font-size: 26px;
+}
+.quickviewText h1, h2, h3, h4, h5{
+	font-size: 22px;
+}
+.quickviewText ul, p {
+	font-size: 18px;
+}
 
 
 /************************************
