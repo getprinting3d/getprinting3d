@@ -54,7 +54,6 @@ button.quickView	{
 	font-size:16px;
 	color: 	#F0F5ee;
 	line-height: 28px;
-	display:block;
 	}
 .mainNavContainer div:hover	{
 	color: #73cc59;
@@ -80,13 +79,18 @@ button.quickView	{
 	height: 0px;
 	border-radius: 0px 0px 7px 7px;
 }
-.dropdown div {
+.dropdown > div {
     border-top: 2px solid #555555;
     font-size: 14px;
     line-height: 33px;
     padding: 0 12px;
 }
-.hoverout {position:relative; top:-37px; width:0; opacity:0;}
+.hoverout {
+	position:absolute;
+	width:0px;
+	background: #292b32;
+	overflow:hidden;
+}
 .hoverout div {width:200px;}
 
 .mainBannerContainer {

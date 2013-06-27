@@ -140,20 +140,20 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
 					<div class="mainNavLinks mainNavLine" onClick="return showContent('category',{'navcat' : '.g_professional_3d_printers'});">Pro 3D Printers</div>
 					<div class="dropdown down displayNone" data-width="265px">
-						<div href='#!category?navcat=.g_professional_3d_printers.3d_systems_zprinters' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this), $(this).parent());' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this), $(this).parent());'
+						<div href='#!category?navcat=.g_professional_3d_printers.3d_systems_zprinters' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent().parent(),1);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent().parent(), 1);'
 						onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent());">
 							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters'});">
 								3D Systems ZPrinters
 							</div>
-							<div class="hoverout floatRight displayNone">
-								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_150'});">ZPrinter 150</div>
-								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_250'});">ZPrinter 250</div>
-								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_350'});">ZPrinter 350</div>
-								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_450'});">ZPrinter 450</div>
-								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_650'});">ZPrinter 650</div>
-								<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_850'});">ZPrinter 850</div>			
-							</div>
 						</div>
+					</div>
+					<div class="hoverout" data-index='1' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent(),1);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent(), 1);'>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_150'});">ZPrinter 150</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_250'});">ZPrinter 250</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_350'});">ZPrinter 350</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_450'});">ZPrinter 450</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_650'});">ZPrinter 650</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_850'});">ZPrinter 850</div>			
 					</div>
 				</div>
 				<div class="pointer"
@@ -497,7 +497,9 @@ remember to NOT put the button inside the 'onclick' container or two events will
 <div class='priceDetail hideInMinimalMode'>
 	<div class='price'>
 		<div data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true;'></div>
+		<!--
 		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
+		-->
 	</div>
 	<div class='detailButton pointer' >DETAILS</div>
 </div>

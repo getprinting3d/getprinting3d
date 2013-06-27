@@ -59,40 +59,36 @@ var store_getprinting3d = function() {
 				//app.u.dump('showing');
 				//console.log($tag.data('timeoutNoShow'));
 				if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow')=== "false") {
-				var $dropdown = $(".dropdown", $tag);
-				var height = 0;
-				$dropdown.show();
-				if($dropdown.data('width')){
-					$dropdown.css("width",$dropdown.data('width'));
-				}
-				if($dropdown.data('height')){
-					height = $dropdown.data('height');
-				} else{
-				$dropdown.children().each(function(){
-				height += $(this).outerHeight();
-				});
-				}
-				if($tag.data('timeout') && $tag.data('timeout')!== "false"){
-				clearTimeout($tag.data('timeout'));
-				$tag.data('timeout','false');
-
-				}
-				$dropdown.stop().animate({"height":height+"px"}, 500);
-				return true;
+					var $dropdown = $(".dropdown", $tag);
+					var $hoverouts = $(".hoverout", $tag);
+					var height = 0;
+					$dropdown.show();
+					if($dropdown.data('width')){
+						$dropdown.css("width",$dropdown.data('width'));
+						$hoverouts.each(function(){
+							app.u.dump($(this).html());
+							$(this).css('left',$dropdown.data('width'));
+							app.u.dump($dropdown.data('width'));
+							app.u.dump($(this).css('left'));
+							});
+					}
+					if($dropdown.data('height')){
+						height = $dropdown.data('height');
+					} else{
+						$dropdown.children().each(function(){
+							height += $(this).outerHeight();
+						});
+					}
+					if($tag.data('timeout') && $tag.data('timeout')!== "false"){
+						clearTimeout($tag.data('timeout'));
+						$tag.data('timeout','false');
+					}
+					$dropdown.stop().animate({"height":height+"px"}, 500);
+					return true;
 				}
 				return false;
 			},
-			showDropDownClick : function($tag){
-				//app.u.dump('showClick');
-				if(this.showDropDown($tag)){
-				$('.dropdown',$tag).unbind('click');
-				$('.dropdown',$tag).click(function(event){event.stopPropagation()});
-				$tag.attr('onClick','').unbind('click');
-				setTimeout(function(){$('body').click(function(){
-				app.ext.store_getprinting3d.a.hideDropDownClick($tag);
-				});}, 500);
-				}
-			},
+			
 
 			hideDropDown : function ($tag) {
 				//app.u.dump('hiding');
@@ -104,52 +100,22 @@ var store_getprinting3d = function() {
 				$tag.data('timeout',setTimeout(function(){$(".dropdown", $tag).hide();},500));
 				return true;
 			},
-			
-			hideDropDownClick : function($tag){
-				//app.u.dump('hideClick');
-				if(this.hideDropDown($tag)){
-				$tag.click(function(){app.ext.store_getprinting3d.a.showDropDownClick($(this));});
-				$('body').unbind('click');
-				}
-			},
 
 			hideDropDownOnSelect : function($tag){
 				this.hideDropDown($tag);
 				$tag.data('timeoutNoShow', setTimeout(function(){$tag.data('timeoutNoShow', 'false');}, 500));
 				},
 				
-			showDropout : function ($tag, $parentparent, $parent, wd) {
-				var $dropout = $(".dropout", $tag);
-				var width = wd;
-				$dropout.children().each(function(){
-				$(this).outerWidth(true);
-				});
-				$parentparent.css({"width":720+"px"},1000);
-				$parent.stop().animate({"width":700+"px"}, 1000);
-				$dropout.stop().animate({"width":width+"px"}, 1000);
-				},
-
-			//ANIMATE RETRACTION OF MAIN CATEGORY 2ND LEVEL DROPOUT MENU
-			hideDropout : function ($tag, $parentparent, $parent) {
-				$(".dropout", $tag).stop().animate({"width":"0px"}, 1000);
-				$parent.stop().animate({"width":460+"px"}, 1000);
-				$parentparent.css({"width":485+"px"}, 1000);
-				},
-			showHoverout : function ($tag, $parent) {
-				var $hoverout = $(".hoverout", $tag);
-				var width = 80;
-				$hoverout.children().each(function(){
-				$(this).outerWidth(true);
-				});
-				$hoverout.stop().animate({"width":width+"px",opacity:1}, 0);
-				$parent.css({"height":"inherit"});
-				$parent.css({"width":280+"px"});
+			showHoverout : function ($parent, index) {
+				var $hoverout = $(".hoverout[data-index="+index+"]", $parent);
+				//app.u.dump($parent.html());
+				//app.u.dump($hoverout.html());
+				$hoverout.stop().animate({"width":200+"px"}, 500);
 				},
 
 			//ANIMATE RETRACTION OF HOVERPRODUCT DROPOUT MENU
-			hideHoverout : function ($tag, $parent) {
-				$(".hoverout", $tag).stop().animate({"width":"0px",opacity:0}, 0);
-				$parent.css({"width":180+"px"});
+			hideHoverout : function ($parent, index) {
+				$(".hoverout[data-index="+index+"]", $parent).stop().animate({"width":"0px"}, 500);
 				}
 				
 			}, //Actions
