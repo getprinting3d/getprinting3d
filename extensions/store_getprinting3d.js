@@ -65,13 +65,10 @@ var store_getprinting3d = function() {
 					$dropdown.show();
 					if($dropdown.data('width')){
 						$dropdown.css("width",$dropdown.data('width'));
-						$hoverouts.each(function(){
-							app.u.dump($(this).html());
-							$(this).css('left',$dropdown.data('width'));
-							app.u.dump($dropdown.data('width'));
-							app.u.dump($(this).css('left'));
-							});
 					}
+					$hoverouts.each(function(){
+						$(this).css('left',$dropdown.outerWidth()-6);
+						});
 					if($dropdown.data('height')){
 						height = $dropdown.data('height');
 					} else{
@@ -110,12 +107,24 @@ var store_getprinting3d = function() {
 				var $hoverout = $(".hoverout[data-index="+index+"]", $parent);
 				//app.u.dump($parent.html());
 				//app.u.dump($hoverout.html());
-				$hoverout.stop().animate({"width":154+"px"}, 0);
+				var width =200;
+				if($hoverout.data('width')){
+					width = $hoverout.data('width');
+					}
+				$hoverout.children().each(function(){
+					$(this).css('width',width+'px');
+					});
+				var top = 0;
+				if($hoverout.data('top')){
+					top = $hoverout.data('top');
+					}
+				$hoverout.css('top',top+'px');
+				$hoverout.stop().animate({"width":width+"px"}, 500);
 				},
 
 			//ANIMATE RETRACTION OF HOVERPRODUCT DROPOUT MENU
 			hideHoverout : function ($parent, index) {
-				$(".hoverout[data-index="+index+"]", $parent).stop().animate({"width":"0px"}, 0);
+				$(".hoverout[data-index="+index+"]", $parent).stop().animate({"width":"0px"}, 500);
 				}
 				
 			}, //Actions

@@ -91,14 +91,13 @@ button.quickView	{
 	background: #292b32;
 	overflow:hidden;
 	border-radius: 0px 0px 7px 7px;
+	
 }
-.hoveroutZPrinter{
-	left: 162px !important;
-	top: 34px;
-}
-.hoveroutZPrinter div{
+.hoverout div{
     border-top: 2px solid #555555;
     padding: 0 35px;
+	font-size: 14px;
+    line-height: 33px;
 }
 
 .mainBannerContainer {

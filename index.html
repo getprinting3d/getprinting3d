@@ -140,14 +140,12 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
 					<div class="mainNavLinks mainNavLine" onClick="return showContent('category',{'navcat' : '.g_professional_3d_printers'});">Pro 3D Printers</div>
 					<div class="dropdown down displayNone" data-width="166px">
-						<div href='#!category?navcat=.g_professional_3d_printers.3d_systems_zprinters' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent().parent(),1);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent().parent(), 1);'
+						<div onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent().parent(),1);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent().parent(), 1);'
 						onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent());">
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters'});">
-								3D Systems ZPrinters
-							</div>
+							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters'});">3D Systems ZPrinters</div>
 						</div>
 					</div>
-					<div class="hoverout hoveroutZPrinter" data-index='1' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent(),1);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent(), 1);'>
+					<div class="hoverout" data-index='1' data-width="154" data-top="34" onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent(),1);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent(), 1);'>
 						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_150'});">ZPrinter 150</div>
 						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_250'});">ZPrinter 250</div>
 						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.g_professional_3d_printers.3d_systems_zprinters.zprinter_350'});">ZPrinter 350</div>
@@ -176,22 +174,26 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
 					<div class="mainNavLinks mainNavLine" onClick="return showContent('category',{'navcat' : '.n_materials___consumables'});">Materials</div>
-						<div class="dropdown displayNone" data-width="206px">
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.bfb_-_rapman_materials'});">BFB 3DTouch/RapMan Spools</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.cube_materials'});">Cube/CubeX ABS, PLA, Access.</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.felix_pla'});">Felix PLA</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.mill_stock'});">Mill Stock</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.milling_supplies'});">Milling Supplies</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.milling_supplies.collets'});">Collets</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.milling_supplies.end_mills'});">End Mills</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.projet_plastic'});">ProJet Plastic</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.projet_wax'});">ProJet Wax</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.silicone'});">Silicone</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter'});">ZPrinter/ProJet x60 </div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter.additional_items'});">Additional Items</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter.binders'});">Binders</div>
-							<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter.infiltrants'});">Infiltrants</div>
-						</div>
+					<div class="dropdown displayNone" data-width="206px">
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.bfb_-_rapman_materials'});">BFB 3DTouch/RapMan Spools</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.cube_materials'});">Cube/CubeX ABS, PLA, Access.</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.felix_pla'});">Felix PLA</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.mill_stock'});">Mill Stock</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.milling_supplies'});" 
+							onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent().parent(),5);' 
+							onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent().parent(), 5);'>Milling Supplies</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.projet_plastic'});">ProJet Plastic</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.projet_wax'});">ProJet Wax</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.silicone'});">Silicone</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter'});">ZPrinter/ProJet x60 </div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter.additional_items'});">Additional Items</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter.binders'});">Binders</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.zprinter.infiltrants'});">Infiltrants</div>
+					</div>
+					<div class="hoverout" data-index="5" data-width="120" data-top='174' onMouseOver='app.ext.store_getprinting3d.a.showHoverout($(this).parent(),5);' onMouseOut='app.ext.store_getprinting3d.a.hideHoverout($(this).parent(), 5);'>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.milling_supplies.collets'});">Collets</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.n_materials___consumables.milling_supplies.end_mills'});">End Mills</div>
+					</div>
 				</div>
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
