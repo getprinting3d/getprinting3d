@@ -110,12 +110,12 @@ var store_getprinting3d = function() {
 				var $hoverout = $(".hoverout[data-index="+index+"]", $parent);
 				//app.u.dump($parent.html());
 				//app.u.dump($hoverout.html());
-				$hoverout.stop().animate({"width":200+"px"}, 500);
+				$hoverout.stop().animate({"width":154+"px"}, 0);
 				},
 
 			//ANIMATE RETRACTION OF HOVERPRODUCT DROPOUT MENU
 			hideHoverout : function ($parent, index) {
-				$(".hoverout[data-index="+index+"]", $parent).stop().animate({"width":"0px"}, 500);
+				$(".hoverout[data-index="+index+"]", $parent).stop().animate({"width":"0px"}, 0);
 				}
 				
 			}, //Actions

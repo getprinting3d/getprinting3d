@@ -90,8 +90,16 @@ button.quickView	{
 	width:0px;
 	background: #292b32;
 	overflow:hidden;
+	border-radius: 0px 0px 7px 7px;
 }
-.hoverout div {width:200px;}
+.hoveroutZPrinter{
+	left: 162px !important;
+	top: 34px;
+}
+.hoveroutZPrinter div{
+    border-top: 2px solid #555555;
+    padding: 0 35px;
+}
 
 .mainBannerContainer {
 	overflow:hidden;
