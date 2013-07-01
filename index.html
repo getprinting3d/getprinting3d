@@ -447,7 +447,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
 
-	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+	<p class="pageDescText" data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
 
@@ -458,6 +458,8 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 	<div class='clearfix alignRight'><a href='#top'>back to top</a></div>
 </div>
+
+
 
 <div id='categoryTemplateEvanston' class='loadingBG categoryTemplate categoryTemplateEvanston'>
 

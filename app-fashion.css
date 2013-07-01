@@ -348,7 +348,8 @@ li.catListItem	{width:25%; margin:0 0 24px 0;}
 .catListItem .catName	{
 	position:absolute; bottom:0; left:0; right:0; background:#ffffff; font-size:.95em; color:#000000; z-index:25;
 	filter: alpha(opacity=50);
-	opacity: 0.5;
+	opacity: 0.8;
+	font-weight:bold;
 	padding:6px;
 	}
 

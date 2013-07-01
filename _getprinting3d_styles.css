@@ -158,7 +158,9 @@ button.quickView	{
 .quickviewText ul, p {
 	font-size: 18px;
 }
-
+.pageDescText {
+	font-size: 10px;
+}
 
 /************************************
 JQUERY UI FIX
