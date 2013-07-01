@@ -67,7 +67,7 @@ button.quickView	{
 	border-right: 2px solid #555555;
 	height: 30px;
 	margin-top:2px;
-	padding: 0px 9px;
+	padding: 0px 8px;
 }
 .dropdown {
 	overflow: hidden;
@@ -160,6 +160,35 @@ button.quickView	{
 }
 .pageDescText {
 	font-size: 10px;
+}
+.evanstonMainBanner{
+	width:1020px;
+	height: 347px;
+}
+.contentPage{
+	width: 555px;
+	float: left;
+}
+.contentPage h1{
+	color: #26447C;
+    font-size: 25px;
+    margin: 9px 0;
+}
+.contentPage h3{
+    font-size: 17px;
+    margin: 4px 0;
+}
+.contentPage p{
+	line-height: 1.35;
+	text-align: justify;
+	text-indent: 25px;
+}
+.contentPageSideBar{
+	width: 432px;
+	float: right;
+}
+.contentPageSideBar img{
+	margin-top: 55px;
 }
 
 /************************************
