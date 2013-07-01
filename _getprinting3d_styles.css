@@ -110,6 +110,7 @@ button.quickView	{
 	width: 750px;	
 	height: 280px;
 	position:absolute; left:0; top:0;
+	overflow:hidden;
 	}
 
 .mainBannerSidebar {
