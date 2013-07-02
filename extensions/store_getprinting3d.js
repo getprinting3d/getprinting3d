@@ -39,7 +39,9 @@ var store_getprinting3d = function() {
 					//run slideshow code
 					var $context = $(app.u.jqSelector('#',P.parentID));
 					
-					$('.mainBannerGraphic', $context).cycle();
+					$('.mainBannerGraphic', $context).cycle({
+						fx : 'cover'
+						});
 					}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
