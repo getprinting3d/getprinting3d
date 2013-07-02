@@ -114,12 +114,13 @@ button.quickView	{
 	}
 
 .mainBannerSidebar {
-	background-color: #FFFFFF;
 	width: 260px;
 	height: 280px;
 	float: right;
 	}
-
+.mainBannerSideBarBottom{	
+	margin-top:10px;
+}
 .mainBannerBottom{
 	display:inline-block;
 	margin-top: 9px;
