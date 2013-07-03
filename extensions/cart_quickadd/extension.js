@@ -108,8 +108,8 @@ var cart_quickadd = function() {
 			}, //Actions
 
 ////////////////////////////////////   UTIL [u]   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+		
 		u : {
-
 			cartShow : function()	{
 				app.u.dump("BEGIN cart_quickadd.u.cartShow");
 				var $QC = $("#quickaddCart");

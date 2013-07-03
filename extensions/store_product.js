@@ -731,7 +731,9 @@ NOTES
 						app.u.dump(" -> have a valid cart object"); app.u.dump(cartObj);
 						if(cartObj)	{
 							r = true;
-							app.calls.cartItemAppend.init(cartObj,_tag || {},'immutable');
+							app.calls.cartItemAppend.init(cartObj,{},'immutable');
+							app.model.destroy('cartDetail');
+							app.calls.cartDetail.init(_tag,'immutable');
 							app.model.dispatchThis('immutable');
 							}
 						}
