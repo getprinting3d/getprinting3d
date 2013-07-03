@@ -167,6 +167,14 @@ button.quickView	{
 	width:1020px;
 	height: 347px;
 }
+.evanstonGrandOpening h2{
+	color: #73cc59;
+    font-size: 25px;
+    margin: 9px 0;
+}
+.evanstonGrandOpening a{
+	font-size:18px;
+}
 .contentPage{
 	width: 555px;
 	float: left;
