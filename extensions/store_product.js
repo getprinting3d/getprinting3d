@@ -423,7 +423,15 @@ $display.appendTo($tag);
 					$tag.show().removeClass('displayNone').removeAttr('disabled');
 					}
 				else	{
-					$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>This item is not available for purchase<\/span>"); //hide button, item is not purchaseable.
+					var price = app.data["appProductGet|"+pid]["%attribs"]["zoovy:base_price"];
+					if(typeof price === "undefined" || price == ""){
+						//blank price msg
+						$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>Call (855)-50Get3D for availability and quote<\/span>"); //hide button, item has no price set.
+						}
+					else {
+						//out of stock message
+						$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>On Order - Call (855)-50Get3D for scheduled availability<\/span>"); //hide button, item is not purchaseable.
+						}
 					}
 
 //				app.u.dump(" -> ID at end: "+$tag.attr('id'));
