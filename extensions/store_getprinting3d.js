@@ -132,6 +132,11 @@ var store_getprinting3d = function() {
 			//ANIMATE RETRACTION OF HOVERPRODUCT DROPOUT MENU
 			hideHoverout : function ($parent, index) {
 				$(".hoverout[data-index="+index+"]", $parent).stop().animate({"width":"0px"}, 500);
+				},
+			
+			hideHoveroutOnSelect : function($tag){
+				this.hideHoverout($tag);
+				$tag.data('timeoutNoShow', setTimeout(function(){$tag.data('timeoutNoShow', 'false');}, 500));
 				}
 				
 			}, //Actions
