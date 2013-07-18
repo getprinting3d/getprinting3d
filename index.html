@@ -128,6 +128,13 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
+					<div onClick="return showContent('category',{'navcat' : '.ascannr'});" class="mainNavLinks mainNavLine">3D Scanners</div>
+						<div class="dropdown displayNone">
+						</div>
+				</div>
+				<div class="pointer"
+					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
+					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
 					<div class="mainNavLinks mainNavLine" onClick="return showContent('category',{'navcat' : '.d_personal_3d_printers'});">Personal 3D Printers</div>
 					<div class="dropdown displayNone" data-width="195px">
 						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.d_personal_3d_printers.cube'});">Cube</div>
