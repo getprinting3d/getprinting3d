@@ -284,7 +284,7 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 	-->
 	
     <div id='footerLinks' class='clearfix'>
-        <div id='help' class="bottomLinkListContainer">
+        <div class="bottomLinkListContainer">
         	<ul class='bottomLinkList'>
             	<li class='listHead'>Help</li>
 				<li><a href='#!company?show=about' class='footerLinkStyle bindByAnchor'>About</a></li>
@@ -296,7 +296,7 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 				<li><a href='#!company?show=privacy' class='footerLinkStyle bindByAnchor'>Privacy policy</a></li>
             </ul>
 		</div>
-        <div id='myaccount' class="bottomLinkListContainer">
+        <div class="bottomLinkListContainer">
             <ul class='bottomLinkList'>
                 <li class='listHead'>My Account</li>
                 <li class='hideIfLoggedIn'><a href='#!customer?show=newsletter'  class='footerLinkStyle bindByAnchor'>Create account</a></li>
@@ -311,31 +311,21 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 			<ul class='bottomLinkList'>
 				<li class='listHead'>Social Networks</li>
 				<li id='social'><a href='http://www.facebook.com/getprinting3d' target="_blank" class='footerLinkStyle'><img src="images/facebook_icon.png"/>Facebook</a></li>
+			</ul>
+		</div>
+		<div class="bottomLinkListContainer">
+			<ul class='bottomLinkList'>
 				<li class='listHead' style="margin-top: 10px;">Retail Locations</li>
 				<li><a href='#!category?navcat=.retail_locations' class='footerLinkStyle bindByAnchor'>Evanston, IL</a></li>
 				<li><a href='#!category?navcat=.retail_locations' class='footerLinkStyle bindByAnchor'>Dayton, OH</a></li>
-				
-			<ul>
-		</div>
+			</ul>
+		</div>	
+					
 		<div class='footerNewsletter'>
 			<div class='listHead'> Newsletter</div>  
-			<div class='headerNewsletterSignUpContainer marginBottom'>              
-				<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
-					<fieldset class='borderNone noPadOrMargin'>
-						<div>
-							<input type='text'  maxlength='50' size='30' name='fullname' class='headerSubscribeFrm' placeholder='Full Name' />
-						</div>	
-		
-						<div id='headerNewsletterEmail'>
-							<input type='email'  maxlength='50' size='30' name='login' class='headerSubscribeFrm' placeholder='E-mail Address' />
-						</div>
-					</fieldset>
-					
-				
-				<input type='submit' class='socialIconContainer' value='SIGN UP!' id='headerSignUpButton'>
-				</form>
-			</div>
-			
+			<ul class='bottomLinkList' >
+				<li><a href='http://visitor.r20.constantcontact.com/d.jsp?llr=psx5mvcab&p=oi&m=1102377344591&sit=qxnndizdb' target="_blank" class='footerLinkStyle'><img src="images/Emailsubscribebutton1.jpg" /></a></li>
+			</ul>	
 		</div>
 <!--
 uncomment and set links

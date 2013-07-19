@@ -1,11 +1,14 @@
 .footerNewsletter {
-	width: 260px;
+	width: 195px;
 	height: 175px;
 	float: right;
 	text-align: center;
 	color: #555555;
 	margin-top: 20px;
 	}
+.footerNewsletter ul{
+	padding:0px;
+}
 #social a{
 	line-height:40px;
 }
