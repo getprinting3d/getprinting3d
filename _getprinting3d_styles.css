@@ -75,7 +75,7 @@ button.quickView	{
 	padding: 0px 16px;
 }
 .lastNavOption{
-	padding: 2px 16px;
+	padding:2px 0px 2px 16px;
 }
 .dropdown {
 	overflow: hidden;
