@@ -207,6 +207,8 @@ button.quickView	{
 .contentPageSideBar img{
 	margin-top: 55px;
 }
+#contactArticle p { margin: 0;}
+#contactArticle h4 {margin-top:15px;}
 
 /************************************
 JQUERY UI FIX
