@@ -323,16 +323,13 @@ CART
 */
 
 
-.checkoutButton	{
-	cursor:pointer;
-	border:0 !important;
-	background:url(app-fashion/checkout-150x50.png) no-repeat !important; 
-	padding:0; margin:0; 
-	text-indent:-10000px; 
-	width:150px; height:50px;
-	z-index:95;
-	}
 
+.ui-button.ui-button-text.ui-state-default.ui-corner-all.checkoutButton {
+    padding: 5px 12px;
+    background: url("images/ui-bg_diagonals-small_55_adf09c_40x40.png") repeat scroll 50% 50% #ADF09C;
+    border: 1px solid #393B42;
+    color: #363636;
+}
 
 
 
