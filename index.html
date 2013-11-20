@@ -417,9 +417,15 @@ COMMONLY EDITED TEMPLATES
 
 	<section id='newArrivals'>	
 		<div class='listHeader'>
-			<h2>Popular Products</h2>
+			<h2>New Products</h2>
 		</div>
 			<ul data-bind="var: list($new_products.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25; hide_summary:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+	</section>	
+	<section id='newArrivals'>	
+		<div class='listHeader'>
+			<h2>Popular Products</h2>
+		</div>
+			<ul data-bind="var: list($popular_products.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25; hide_summary:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
 	</section>
 
 <!--	
