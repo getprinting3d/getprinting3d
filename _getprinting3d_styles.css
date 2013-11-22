@@ -125,9 +125,23 @@ button.quickView	{
 	width: 260px;
 	height: 280px;
 	float: right;
-	}
+}
+.mainBannerSideBarTop{
+	width:260px;
+	height: 135px;
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationdayton.jpg);
+}
+.mainBannerSideBarTop:hover {
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationdaytonro.jpg);
+}
 .mainBannerSideBarBottom{	
 	margin-top:10px;
+	width:260px;
+	height:135px;
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationevanston.jpg);
+}
+.mainBannerSideBarBottom:hover{
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationevanstonro.jpg);
 }
 .mainBannerBottom{
 	display:inline-block;
