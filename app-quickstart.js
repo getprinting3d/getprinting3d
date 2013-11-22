@@ -2727,6 +2727,12 @@ buyer to 'take with them' as they move between  pages.
 					else if(catSafeID == '.retail_locations'){
 						infoObj.templateID = 'categoryTemplateRetailLocations';
 						}
+					else if(catSafeID == '.retail_locations.evanston'){
+						infoObj.templateID = 'categoryTemplateEvanston';
+						}
+					else if(catSafeID == '.retail_locations.dayton'){
+						infoObj.templateID = 'categoryTemplateDayton';
+						}
 					else	{
 						infoObj.templateID = 'categoryTemplate'
 						}
