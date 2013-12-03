@@ -129,8 +129,16 @@ app.u.loadScript(app.vars.baseURL+"app-fashion-init.js");
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
 					onMouseOut="app.ext.store_getprinting3d.a.hideDropDown($(this));">
 					<div onClick="return showContent('category',{'navcat' : '.ascannr'});" class="mainNavLinks mainNavLine">3D Scanners</div>
-						<div class="dropdown displayNone">
-						</div>
+					<div class="dropdown displayNone" data-width="130px">
+						<!-- Remove this comment when you add products to category
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.ascannr.3d_systems'});">3D Systems</div>
+						--->
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.ascannr.makerbot'});">MakerBot</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.ascannr.creaform'});">Creaform</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.ascannr.3shape'});">3Shape</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.ascannr.microsoft'});">Microsoft</div>
+						<div onClick="app.ext.store_getprinting3d.a.hideDropDownOnSelect($(this).parent().parent()); return showContent('category',{'navcat':'.ascannr.roland'});">Roland</div>
+					</div>
 				</div>
 				<div class="pointer"
 					onMouseOver="app.ext.store_getprinting3d.a.showDropDown($(this));"
