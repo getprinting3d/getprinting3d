@@ -197,6 +197,14 @@ button.quickView	{
 	width: 555px;
 	float: left;
 }
+.contentPageLink {
+	color: #0064EB;
+    font-family: Arial,Helvetica,sans-serif;
+    text-decoration: underline;
+}
+.contentPageLink:hover {
+	color: #26447C;
+}
 .contentPage h1{
 	color: #26447C;
     font-size: 25px;
