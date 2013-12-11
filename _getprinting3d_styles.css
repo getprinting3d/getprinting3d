@@ -227,7 +227,7 @@ button.quickView	{
 }
 #contactArticle p { margin: 0;}
 #contactArticle h4 {margin-top:15px;}
-
+.retailSocialIcons img {margin:0px;}
 /************************************
 JQUERY UI FIX
 ************************************/
