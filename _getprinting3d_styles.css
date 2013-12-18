@@ -129,19 +129,19 @@ button.quickView	{
 .mainBannerSideBarTop{
 	width:260px;
 	height: 135px;
-	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationdayton.jpg);
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationsdayholiday1.jpg);
 }
 .mainBannerSideBarTop:hover {
-	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationdaytonro.jpg);
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationsdayholiday2.jpg);
 }
 .mainBannerSideBarBottom{	
 	margin-top:10px;
 	width:260px;
 	height:135px;
-	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationevanston.jpg);
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationsevholiday1.jpg);
 }
 .mainBannerSideBarBottom:hover{
-	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationevanstonro.jpg);
+	background: url(https://static---getprinting3d.app-hosted.com/media/img/getprinting3d/-/gp3dbannerslogos/sidebarbannerslocationsevholiday2.jpg);
 }
 .mainBannerBottom{
 	display:inline-block;
