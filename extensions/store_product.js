@@ -426,11 +426,11 @@ $display.appendTo($tag);
 					var price = app.data["appProductGet|"+pid]["%attribs"]["zoovy:base_price"];
 					if(typeof price === "undefined" || price == ""){
 						//blank price msg
-						$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>Call (855)-50Get3D for availability and quote<\/span>"); //hide button, item has no price set.
+						$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>Call 855-504-3833 for availability and quote<\/span>"); //hide button, item has no price set.
 						}
 					else {
 						//out of stock message
-						$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>On Order - Call (855)-50Get3D for scheduled availability<\/span>"); //hide button, item is not purchaseable.
+						$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>On Order - Call 855-504-3833 for scheduled availability<\/span>"); //hide button, item is not purchaseable.
 						}
 					}
 
