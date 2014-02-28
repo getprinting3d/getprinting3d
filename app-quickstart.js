@@ -2733,6 +2733,9 @@ buyer to 'take with them' as they move between  pages.
 					else if(catSafeID == '.retail_locations.dayton'){
 						infoObj.templateID = 'categoryTemplateDayton';
 						}
+					else if(catSafeID == '.3d_for_education'){
+						infoObj.templateID = 'categoryTemplate3DforEducation';
+						}
 					else	{
 						infoObj.templateID = 'categoryTemplate'
 						}
